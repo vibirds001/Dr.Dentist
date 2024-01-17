@@ -37,7 +37,6 @@ public class Container : MonoBehaviour
         }
         for (int i = 1; i <= totalgems; i++)
         {
-
             Vector3 gemPosition = new Vector3(i * gemOffset, 0f, 0f);
             GameObject g = Instantiate(GemPrefab, transform.position + gemPosition, Quaternion.identity, transform);
             g.GetComponent<GemManager>().gemNumber = i;
@@ -56,80 +55,91 @@ public class Container : MonoBehaviour
         string[] n = name.Split("/");
  
         //if (GemName+gemType+gemNumber == "")
-        if (n[1] == "Ruby")
+        if (n[1] == "ToothBrush")
         {
             selectedGemIcons[number - 1].sprite = gemsImages[0];
         }
-        else if (n[1] == "Amethyst")
+        else if (n[1] == "Toothpaste")
         {
             selectedGemIcons[number - 1].sprite = gemsImages[1];
         }
-        else if (n[1] == "Emerald")
+        else if (n[1] == "Floss")
         {
             selectedGemIcons[number - 1].sprite = gemsImages[2];
         }
-        else if (n[1] == "Saphire")
+        else if (n[1] == "MouthWash")
         {
             selectedGemIcons[number - 1].sprite = gemsImages[3];
         }
-        else if (n[1] == "Topaz")
+        else if (n[1] == "TongueScraper")
         {
             selectedGemIcons[number - 1].sprite = gemsImages[4];
         }
-        else if (n[1] == "RubySS")
+        else if (n[1] == "HawleyRetainer")
         {
             selectedGemIcons[number - 1].sprite = gemsImages[5];
         }
-        else if (n[1] == "AmethystSS")
+        else if (n[1] == "MolarBands")
         {
             selectedGemIcons[number - 1].sprite = gemsImages[6];
         }
-        else if (n[1] == "EmeraldS")
+        else if (n[1] == "WaterPick")
         {
             selectedGemIcons[number - 1].sprite = gemsImages[7];
         }
-        else if (n[1] == "SaphireS")
+        else if (n[1] == "Elastics")
         {
             selectedGemIcons[number - 1].sprite = gemsImages[8];
         }
-        else if (n[1] == "TopazS")
+        else if (n[1] == "ToothX-Rays")
         {
             selectedGemIcons[number - 1].sprite = gemsImages[9];
         }
-        else if (n[1] == "Temporal")
+        else if (n[1] == "Expander")
         {
             selectedGemIcons[number - 1].sprite = gemsImages[10];
         }
-        else if (n[1] == "Salamander")
+        else if (n[1] == "PlasticRetainer")
         {
             selectedGemIcons[number - 1].sprite = gemsImages[11];
         }
-        else if (n[1] == "Basic")
+        else if (n[1] == "3DPrinter")
         {
             selectedGemIcons[number - 1].sprite = gemsImages[12];
         }
-        else if (n[1] == "Multiplier")
+        else if (n[1] == "WhiteningTray")
         {
             selectedGemIcons[number - 1].sprite = gemsImages[13];
         }
-        else if (n[1] == "Chronos")
+        else if (n[1] == "3DDentalScanner")
         {
             selectedGemIcons[number - 1].sprite = gemsImages[14];
         }
-        else if (n[1] == "Void")
+        else if (n[1] == "MetalBraces")
         {
             selectedGemIcons[number - 1].sprite = gemsImages[15];
         }
-        else if (n[1] == "Transfiguration")
+        else if (n[1] == "Aligners")
         {
             selectedGemIcons[number - 1].sprite = gemsImages[16];
+        }
+        else if (n[1] == "Whitening")
+        {
+            selectedGemIcons[number - 1].sprite = gemsImages[17];
+        }
+        else if (n[1] == "ToothColoredBraces")
+        {
+            selectedGemIcons[number - 1].sprite = gemsImages[18];
+        }
+        else if (n[1] == "LingualMetalRetainer")
+        {
+            selectedGemIcons[number - 1].sprite = gemsImages[19];
         }
         else
         {
             selectedGemIcons[number - 1].sprite = RemoveImage;
         }
     }
-
 
     public void Remove(int number)
     {

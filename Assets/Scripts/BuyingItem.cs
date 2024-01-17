@@ -38,7 +38,7 @@ public class BuyingItem : MonoBehaviour
     {
         gemNameText.text = "The Polished";
         DescriptionText.text = "Give a 1.3 bonus score for ranked mode.";
-        BuyWithAuraText.text = "Buy         " + GemPrice;
+        BuyWithAuraText.text = "Buy       " + GemPrice;
         BuyButton.onClick.RemoveAllListeners();
         //BuyButton.onClick.AddListener(() => buyButton(GemPrice, "polished"));
         BuyButton.onClick.AddListener(() => ObtainedPolished(GemPrice, "score increment"));
@@ -49,7 +49,7 @@ public class BuyingItem : MonoBehaviour
 
         gemNameText.text = "The Time Spirit";
         DescriptionText.text = "+ 30 seconds in time limit.";
-        BuyWithAuraText.text = "Buy         " + GemPrice;
+        BuyWithAuraText.text = "Buy       " + GemPrice;
         BuyButton.onClick.RemoveAllListeners();
         //  BuyButton.onClick.AddListener(() => buyButton(GemPrice, "The Time Spirit"));
         BuyButton.onClick.AddListener(() => ObtainedTimeSpirit(GemPrice, "Time Spirit"));
@@ -60,7 +60,7 @@ public class BuyingItem : MonoBehaviour
     {
         gemNameText.text = "The Clover";
         DescriptionText.text = "Lucky";
-        BuyWithAuraText.text = "Buy         " + GemPrice;
+        BuyWithAuraText.text = "Buy       " + GemPrice;
         BuyButton.onClick.RemoveAllListeners();
         //  BuyButton.onClick.AddListener(() => buyButton(GemPrice, "The Clover"));
         BuyButton.onClick.AddListener(() => ObtainedLucky(GemPrice, "Clover"));
@@ -71,7 +71,7 @@ public class BuyingItem : MonoBehaviour
     {
         gemNameText.text = "Bag of Debris";
         DescriptionText.text = "Grant 3 common gem";
-        BuyWithAuraText.text = "Buy         " + BagOfDebris;
+        BuyWithAuraText.text = "Buy      " + BagOfDebris;
         BuyButton.onClick.RemoveAllListeners();
         BuyButton.onClick.AddListener(() => buyButtonBagOfDebris(BagOfDebris, "Bag of Debris"));
 
@@ -82,7 +82,7 @@ public class BuyingItem : MonoBehaviour
     {
         gemNameText.text = "Large Deposit ";
         DescriptionText.text = "Grant 5 gems";
-        BuyWithAuraText.text = "Buy         " + LargeDepositGemPrice;
+        BuyWithAuraText.text = "Buy     " + LargeDepositGemPrice;
         BuyButton.onClick.RemoveAllListeners();
         BuyButton.onClick.AddListener(() => buyButtonLargeDeposit(LargeDepositGemPrice, "Large Deposit"));
 
@@ -93,7 +93,7 @@ public class BuyingItem : MonoBehaviour
     {
         gemNameText.text = "Shiny Rock ";
         DescriptionText.text = "Grant 1 Rare Stone";
-        BuyWithAuraText.text = "Buy         " + ShinyRockGemPrice;
+        BuyWithAuraText.text = "Buy     " + ShinyRockGemPrice;
         BuyButton.onClick.RemoveAllListeners();
         BuyButton.onClick.AddListener(() => buyButtoShinyRock(ShinyRockGemPrice, "Shiny Rock "));
 
@@ -104,7 +104,7 @@ public class BuyingItem : MonoBehaviour
     {
         gemNameText.text = "Shiny Deposit";
         DescriptionText.text = "Grant 3 gems.";
-        BuyWithAuraText.text = "Buy       " + ShinyDepositGemPrice;
+        BuyWithAuraText.text = "Buy   " + ShinyDepositGemPrice;
         BuyButton.onClick.RemoveAllListeners();
         BuyButton.onClick.AddListener(() => buyButtonShinyDeposit(ShinyDepositGemPrice, "Shiny Deposit"));
 
@@ -115,7 +115,7 @@ public class BuyingItem : MonoBehaviour
     {
         gemNameText.text = "Legendary Gemstone";
         DescriptionText.text = "Grant 1 Legendary Gem ";
-        BuyWithAuraText.text = "Buy         " + ULGemPrice;
+        BuyWithAuraText.text = "Buy      " + ULGemPrice;
         BuyButton.onClick.RemoveAllListeners();
         BuyButton.onClick.AddListener(() => buyButtonLegendaryGemStone(ULGemPrice, "Legendary Gemstone"));
 
@@ -176,77 +176,86 @@ public class BuyingItem : MonoBehaviour
             if (Random.value < 0.05)
             {
 
-                int R = Random.Range(1, 5);
+                int R = Random.Range(1, 6);
                 if (R == 1)
                 {
-                    PlayerPrefs.SetString("Gem" + (tg + 1), "Rare/Temporal/" + (tg + 1));
-                    SetStats("Rare", "Temporal", (tg + 1));
+                    PlayerPrefs.SetString("Gem" + (tg + 1), "3rdTier/Expander/" + (tg + 1));
+                    SetStats("3rdTier", "Expander", (tg + 1));
                     tg++;
                     mainMenuPanel.mmp.bagOfDebrisImg[i - 1].sprite = mainMenuPanel.mmp.gemSprite[10];
 
                 }
                 else if (R == 2)
                 {
-                    PlayerPrefs.SetString("Gem" + (tg + 1), "Rare/Salamander/" + (tg + 1));
-                    SetStats("Rare", "Salamander", (tg + 1));
+                    PlayerPrefs.SetString("Gem" + (tg + 1), "3rdTier/PlasticRetainer/" + (tg + 1));
+                    SetStats("3rdTier", "PlasticRetainer", (tg + 1));
                     tg++;
                     mainMenuPanel.mmp.bagOfDebrisImg[i - 1].sprite = mainMenuPanel.mmp.gemSprite[11];
 
                 }
                 else if (R == 3)
                 {
-                    PlayerPrefs.SetString("Gem" + (tg + 1), "Rare/Basic/" + (tg + 1));
-                    SetStats("Rare", "Basic", (tg + 1));
+                    PlayerPrefs.SetString("Gem" + (tg + 1), "3rdTier/3DPrinter/" + (tg + 1));
+                    SetStats("3rdTier", "3DPrinter", (tg + 1));
                     tg++;
                     mainMenuPanel.mmp.bagOfDebrisImg[i - 1].sprite = mainMenuPanel.mmp.gemSprite[12];
 
                 }
-                else
+                else if (R == 4)
                 {
-                    PlayerPrefs.SetString("Gem" + (tg + 1), "Rare/Multiplier/" + (tg + 1));
-                    SetStats("Rare", "Multiplier", (tg + 1));
+                    PlayerPrefs.SetString("Gem" + (tg + 1), "3rdTier/WhiteningTray/" + (tg + 1));
+                    SetStats("3rdTier", "WhiteningTray", (tg + 1));
                     tg++;
                     mainMenuPanel.mmp.bagOfDebrisImg[i - 1].sprite = mainMenuPanel.mmp.gemSprite[13];
                 }
+                else
+                {
+                    PlayerPrefs.SetString("Gem" + (tg + 1), "3rdTier/3DDentalScanner/" + (tg + 1));
+                    SetStats("3rdTier", "3DDentalScanner", (tg + 1));
+                    tg++;
+                    mainMenuPanel.mmp.bagOfDebrisImg[i - 1].sprite = mainMenuPanel.mmp.gemSprite[14];
+                }
+
             }
             else
             {
                 int R = Random.Range(1, 6);
                 if (R == 1)
                 {
-                    PlayerPrefs.SetString("Gem" + (tg + 1), "common/RubySS/" + (tg + 1));
-                    SetStats("common", "RubySS", (tg + 1));
+                    PlayerPrefs.SetString("Gem" + (tg + 1), "2ndTier/HawleyRetainer/" + (tg + 1));
+                    SetStats("2ndTier", "HawleyRetainer", (tg + 1));
                     tg++;
+                    mainMenuPanel.mmp.bagOfDebrisImg[i - 1].sprite = mainMenuPanel.mmp.gemSprite[5];
 
                 }
                 else if (R == 2)
                 {
-                    PlayerPrefs.SetString("Gem" + (tg + 1), "common/AmethystSS/" + (tg + 1));
-                    SetStats("common", "AmethystSS", (tg + 1));
+                    PlayerPrefs.SetString("Gem" + (tg + 1), "2ndTier/MolarBands/" + (tg + 1));
+                    SetStats("2ndTier", "MolarBands", (tg + 1));
                     tg++;
                     mainMenuPanel.mmp.bagOfDebrisImg[i - 1].sprite = mainMenuPanel.mmp.gemSprite[6];
 
                 }
                 else if (R == 3)
                 {
-                    PlayerPrefs.SetString("Gem" + (tg + 1), "common/EmeraldS/" + (tg + 1));
-                    SetStats("common", "EmeraldS", (tg + 1));
+                    PlayerPrefs.SetString("Gem" + (tg + 1), "2ndTier/WaterPick/" + (tg + 1));
+                    SetStats("2ndTier", "WaterPick", (tg + 1));
                     tg++;
                     mainMenuPanel.mmp.bagOfDebrisImg[i - 1].sprite = mainMenuPanel.mmp.gemSprite[7];
 
                 }
                 else if (R == 4)
                 {
-                    PlayerPrefs.SetString("Gem" + (tg + 1), "common/SaphireS/" + (tg + 1));
-                    SetStats("common", "SaphireS", (tg + 1));
+                    PlayerPrefs.SetString("Gem" + (tg + 1), "2ndTier/Elastics/" + (tg + 1));
+                    SetStats("2ndTier", "Elastics", (tg + 1));
                     tg++;
                     mainMenuPanel.mmp.bagOfDebrisImg[i - 1].sprite = mainMenuPanel.mmp.gemSprite[8];
 
                 }
                 else
                 {
-                    PlayerPrefs.SetString("Gem" + (tg + 1), "common/TopazS/" + (tg + 1));
-                    SetStats("common", "TopazS", (tg + 1));
+                    PlayerPrefs.SetString("Gem" + (tg + 1), "2ndTier/ToothX-Rays/" + (tg + 1));
+                    SetStats("2ndTier", "ToothX-Rays", (tg + 1));
                     tg++;
                     mainMenuPanel.mmp.bagOfDebrisImg[i - 1].sprite = mainMenuPanel.mmp.gemSprite[9];
 
@@ -268,6 +277,7 @@ public class BuyingItem : MonoBehaviour
     public void ObtainedLargeDeposit()
     {
         mainMenuPanel.mmp.obtainedItemPanel.SetActive(true);
+        print(mainMenuPanel.mmp.obtainedItemPanel);
         mainMenuPanel.mmp.bagOfDebrisGameObject.SetActive(false);
         mainMenuPanel.mmp.largeDepositGameObject.SetActive(true);
         mainMenuPanel.mmp.shinyDepositGameObject.SetActive(false);
@@ -277,111 +287,137 @@ public class BuyingItem : MonoBehaviour
         int tg = PlayerPrefs.GetInt("totalgems");
         for (int i = 1; i <= 5; i++)
         {
-            if (Random.value < 0.05)
+            float r = Random.value;
+            if (r < 0.05)
             {
-
-                int R = Random.Range(1, 5);
+                int R = Random.Range(1, 6);
+                print(i + " AAA " + R);
                 if (R == 1)
                 {
-                    PlayerPrefs.SetString("Gem" + (tg + 1), "Rare/Temporal/" + (tg + 1));
-                    SetStats("Rare", "Temporal", (tg + 1));
+                    PlayerPrefs.SetString("Gem" + (tg + 1), "3rdTier/Expander/" + (tg + 1));
+                    SetStats("3rdTier", "Expander", (tg + 1));
                     tg++;
                     mainMenuPanel.mmp.LargeDepositImg[i - 1].sprite = mainMenuPanel.mmp.gemSprite[10];
 
                 }
                 else if (R == 2)
                 {
-                    PlayerPrefs.SetString("Gem" + (tg + 1), "Rare/Salamander/" + (tg + 1));
-                    SetStats("Rare", "Salamander", (tg + 1));
+                    PlayerPrefs.SetString("Gem" + (tg + 1), "3rdTier/PlasticRetainer/" + (tg + 1));
+                    SetStats("3rdTier", "PlasticRetainer", (tg + 1));
                     tg++;
                     mainMenuPanel.mmp.LargeDepositImg[i - 1].sprite = mainMenuPanel.mmp.gemSprite[11];
 
                 }
                 else if (R == 3)
                 {
-                    PlayerPrefs.SetString("Gem" + (tg + 1), "Rare/Basic/" + (tg + 1));
-                    SetStats("Rare", "Basic", (tg + 1));
+                    PlayerPrefs.SetString("Gem" + (tg + 1), "3rdTier/3DPrinter/" + (tg + 1));
+                    SetStats("3rdTier", "3DPrinter", (tg + 1));
                     tg++;
                     mainMenuPanel.mmp.LargeDepositImg[i - 1].sprite = mainMenuPanel.mmp.gemSprite[12];
 
                 }
-                else
+                else if (R == 4)
                 {
-                    PlayerPrefs.SetString("Gem" + (tg + 1), "Rare/Multiplier/" + (tg + 1));
-                    SetStats("Rare", "Multiplier", (tg + 1));
+                    PlayerPrefs.SetString("Gem" + (tg + 1), "3rdTier/WhiteningTray/" + (tg + 1));
+                    SetStats("3rdTier", "WhiteningTray", (tg + 1));
                     tg++;
                     mainMenuPanel.mmp.LargeDepositImg[i - 1].sprite = mainMenuPanel.mmp.gemSprite[13];
                 }
+                else
+                {
+                    PlayerPrefs.SetString("Gem" + (tg + 1), "3rdTier/3DDentalScanner/" + (tg + 1));
+                    SetStats("3rdTier", "3DDentalScanner", (tg + 1));
+                    tg++;
+                    mainMenuPanel.mmp.LargeDepositImg[i - 1].sprite = mainMenuPanel.mmp.gemSprite[14];
+                }
             }
-            else if ((Random.value < 0.95))
+            else if (r < 0.999)
             {
                 int R = Random.Range(1, 6);
+                print(i + " BBB " + R);
                 if (R == 1)
                 {
-                    PlayerPrefs.SetString("Gem" + (tg + 1), "common/RubySS/" + (tg + 1));
-                    SetStats("common", "RubySS", (tg + 1));
+                    PlayerPrefs.SetString("Gem" + (tg + 1), "2ndTier/HawleyRetainer/" + (tg + 1));
+                    SetStats("2ndTier", "HawleyRetainer", (tg + 1));
                     tg++;
                     mainMenuPanel.mmp.LargeDepositImg[i - 1].sprite = mainMenuPanel.mmp.gemSprite[5];
 
                 }
                 else if (R == 2)
                 {
-                    PlayerPrefs.SetString("Gem" + (tg + 1), "common/AmethystSS/" + (tg + 1));
-                    SetStats("common", "AmethystSS", (tg + 1));
+                    PlayerPrefs.SetString("Gem" + (tg + 1), "2ndTier/MolarBands/" + (tg + 1));
+                    SetStats("2ndTier", "MolarBands", (tg + 1));
                     tg++;
                     mainMenuPanel.mmp.LargeDepositImg[i - 1].sprite = mainMenuPanel.mmp.gemSprite[6];
 
                 }
                 else if (R == 3)
                 {
-                    PlayerPrefs.SetString("Gem" + (tg + 1), "common/EmeraldS/" + (tg + 1));
-                    SetStats("common", "EmeraldS", (tg + 1));
+                    PlayerPrefs.SetString("Gem" + (tg + 1), "2ndTier/WaterPick/" + (tg + 1));
+                    SetStats("2ndTier", "WaterPick", (tg + 1));
                     tg++;
                     mainMenuPanel.mmp.LargeDepositImg[i - 1].sprite = mainMenuPanel.mmp.gemSprite[7];
 
                 }
                 else if (R == 4)
                 {
-                    PlayerPrefs.SetString("Gem" + (tg + 1), "common/SaphireS/" + (tg + 1));
-                    SetStats("common", "SaphireS", (tg + 1));
+                    PlayerPrefs.SetString("Gem" + (tg + 1), "2ndTier/Elastics/" + (tg + 1));
+                    SetStats("2ndTier", "Elastics", (tg + 1));
                     tg++;
                     mainMenuPanel.mmp.LargeDepositImg[i - 1].sprite = mainMenuPanel.mmp.gemSprite[8];
 
                 }
                 else
                 {
-                    PlayerPrefs.SetString("Gem" + (tg + 1), "common/TopazS/" + (tg + 1));
-                    SetStats("common", "TopazS", (tg + 1));
+                    PlayerPrefs.SetString("Gem" + (tg + 1), "2ndTier/ToothX-Rays/" + (tg + 1));
+                    SetStats("2ndTier", "ToothX-Rays", (tg + 1));
                     tg++;
                     mainMenuPanel.mmp.LargeDepositImg[i - 1].sprite = mainMenuPanel.mmp.gemSprite[9];
 
                 }
             }
-            else if ((Random.value < 0.001))
+            else
             {
-                int R = Random.Range(1, 4);
+                int R = Random.Range(1, 6);
+                print(i + " CCC " + R);
                 if (R == 1)
                 {
-                    PlayerPrefs.SetString("Gem" + (tg + 1), "Legendary/Chronos/" + (tg + 1));
-                    SetStats("Legendary", "Chronos", (tg + 1));
-                    tg++;
-                    mainMenuPanel.mmp.LargeDepositImg[i - 1].sprite = mainMenuPanel.mmp.gemSprite[14];
-
-                }
-                else if (R == 2)
-                {
-                    PlayerPrefs.SetString("Gem" + (tg + 1), "Legendary/Void/" + (tg + 1));
-                    SetStats("Legendary", "Void", (tg + 1));
+                    PlayerPrefs.SetString("Gem" + (tg + 1), "4thTier/MetalBraces/" + (tg + 1));
+                    SetStats("4thTier", "MetalBraces", (tg + 1));
                     tg++;
                     mainMenuPanel.mmp.LargeDepositImg[i - 1].sprite = mainMenuPanel.mmp.gemSprite[15];
 
                 }
-                else
+                else if (R == 2)
                 {
-                    PlayerPrefs.SetString("Gem" + (tg + 1), "Legendary/Transfiguration/" + (tg + 1));
-                    SetStats("Legendary", "Transfiguration", (tg + 1));
+                    PlayerPrefs.SetString("Gem" + (tg + 1), "4thTier/Aligners/" + (tg + 1));
+                    SetStats("4thTier", "Aligners", (tg + 1));
                     tg++;
                     mainMenuPanel.mmp.LargeDepositImg[i - 1].sprite = mainMenuPanel.mmp.gemSprite[16];
+
+                }
+                else if(R==3)
+                {
+                    PlayerPrefs.SetString("Gem" + (tg + 1), "4thTier/Whitening/" + (tg + 1));
+                    SetStats("4thTier", "Whitening", (tg + 1));
+                    tg++;
+                    mainMenuPanel.mmp.LargeDepositImg[i - 1].sprite = mainMenuPanel.mmp.gemSprite[17];
+
+                }
+                else if (R == 4)
+                {
+                    PlayerPrefs.SetString("Gem" + (tg + 1), "4thTier/ToothColoredBraces/" + (tg + 1));
+                    SetStats("4thTier", "ToothColoredBraces", (tg + 1));
+                    tg++;
+                    mainMenuPanel.mmp.LargeDepositImg[i - 1].sprite = mainMenuPanel.mmp.gemSprite[18];
+
+                }
+                else
+                {
+                    PlayerPrefs.SetString("Gem" + (tg + 1), "4thTier/LingualMetalRetainer/" + (tg + 1));
+                    SetStats("4thTier", "LingualMetalRetainer", (tg + 1));
+                    tg++;
+                    mainMenuPanel.mmp.LargeDepositImg[i - 1].sprite = mainMenuPanel.mmp.gemSprite[19];
 
                 }
                 //CheckSelectedGems(i);
@@ -411,30 +447,39 @@ public class BuyingItem : MonoBehaviour
         int R = Random.Range(1, 5);
         if (R == 1)
         {
-            PlayerPrefs.SetString("Gem" + (tg + 1), "Rare/Temporal/" + (tg + 1));
-            SetStats("Rare", "Temporal", (tg + 1));
+            PlayerPrefs.SetString("Gem" + (tg + 1), "3rdTier/Expander/" + (tg + 1));
+            SetStats("3rdTier", "Expander", (tg + 1));
+            tg++;
             mainMenuPanel.mmp.shinyRockImg.sprite = mainMenuPanel.mmp.gemSprite[10];
 
         }
         else if (R == 2)
         {
-            PlayerPrefs.SetString("Gem" + (tg + 1), "Rare/Salamander/" + (tg + 1));
-            SetStats("Rare", "Salamander", (tg + 1));
+            PlayerPrefs.SetString("Gem" + (tg + 1), "3rdTier/PlasticRetainer/" + (tg + 1));
+            SetStats("3rdTier", "PlasticRetainer", (tg + 1));
             mainMenuPanel.mmp.shinyRockImg.sprite = mainMenuPanel.mmp.gemSprite[11];
 
         }
         else if (R == 3)
         {
-            PlayerPrefs.SetString("Gem" + (tg + 1), "Rare/Basic/" + (tg + 1));
-            SetStats("Rare", "Basic", (tg + 1));
+            PlayerPrefs.SetString("Gem" + (tg + 1), "3rdTier/3DPrinter/" + (tg + 1));
+            SetStats("3rdTier", "3DPrinter", (tg + 1));
             mainMenuPanel.mmp.shinyRockImg.sprite = mainMenuPanel.mmp.gemSprite[12];
 
         }
+        else if (R == 4)
+        {
+            PlayerPrefs.SetString("Gem" + (tg + 1), "3rdTier/WhiteningTray/" + (tg + 1));
+            SetStats("3rdTier", "WhiteningTray", (tg + 1));
+            tg++;
+            mainMenuPanel.mmp.shinyRockImg.sprite = mainMenuPanel.mmp.gemSprite[13];
+        }
         else
         {
-            PlayerPrefs.SetString("Gem" + (tg + 1), "Rare/Multiplier/" + (tg + 1));
-            SetStats("Rare", "Multiplier", (tg + 1));
-            mainMenuPanel.mmp.shinyRockImg.sprite = mainMenuPanel.mmp.gemSprite[13];
+            PlayerPrefs.SetString("Gem" + (tg + 1), "3rdTier/3DDentalScanner/" + (tg + 1));
+            SetStats("3rdTier", "3DDentalScanner", (tg + 1));
+      
+            mainMenuPanel.mmp.shinyRockImg.sprite = mainMenuPanel.mmp.gemSprite[14];
         }
         PlayerPrefs.SetInt("totalgems", PlayerPrefs.GetInt("totalgems") + 1);
         Container.c.gems();
@@ -462,111 +507,133 @@ public class BuyingItem : MonoBehaviour
         int tg = PlayerPrefs.GetInt("totalgems");
         for (int i = 1; i <= 3; i++)
         {
-            if (Random.value < 0.74)
+            float r = Random.value;
+            if (r < 0.99)
             {
 
-                int R = Random.Range(1, 5);
+                int R = Random.Range(1, 6);
                 if (R == 1)
                 {
-                    PlayerPrefs.SetString("Gem" + (tg + 1), "Rare/Temporal/" + (tg + 1));
-                    SetStats("Rare", "Temporal", (tg + 1));
+                    PlayerPrefs.SetString("Gem" + (tg + 1), "3rdTier/Expander/" + (tg + 1));
+                    SetStats("3rdTier", "Expander", (tg + 1));
                     tg++;
                     mainMenuPanel.mmp.shinyDepositImg[i - 1].sprite = mainMenuPanel.mmp.gemSprite[10];
 
                 }
                 else if (R == 2)
                 {
-                    PlayerPrefs.SetString("Gem" + (tg + 1), "Rare/Salamander/" + (tg + 1));
-                    SetStats("Rare", "Salamander", (tg + 1));
+                    PlayerPrefs.SetString("Gem" + (tg + 1), "3rdTier/PlasticRetainer/" + (tg + 1));
+                    SetStats("3rdTier", "PlasticRetainer", (tg + 1));
                     tg++;
                     mainMenuPanel.mmp.shinyDepositImg[i - 1].sprite = mainMenuPanel.mmp.gemSprite[11];
 
                 }
                 else if (R == 3)
                 {
-                    PlayerPrefs.SetString("Gem" + (tg + 1), "Rare/Basic/" + (tg + 1));
-                    SetStats("Rare", "Basic", (tg + 1));
+                    PlayerPrefs.SetString("Gem" + (tg + 1), "3rdTier/3DPrinter/" + (tg + 1));
+                    SetStats("3rdTier", "3DPrinter", (tg + 1));
                     tg++;
                     mainMenuPanel.mmp.shinyDepositImg[i - 1].sprite = mainMenuPanel.mmp.gemSprite[12];
 
                 }
-                else
+                else if (R == 4)
                 {
-                    PlayerPrefs.SetString("Gem" + (tg + 1), "Rare/Multiplier/" + (tg + 1));
-                    SetStats("Rare", "Multiplier", (tg + 1));
+                    PlayerPrefs.SetString("Gem" + (tg + 1), "3rdTier/WhiteningTray/" + (tg + 1));
+                    SetStats("3rdTier", "WhiteningTray", (tg + 1));
                     tg++;
                     mainMenuPanel.mmp.shinyDepositImg[i - 1].sprite = mainMenuPanel.mmp.gemSprite[13];
                 }
+                else
+                {
+                    PlayerPrefs.SetString("Gem" + (tg + 1), "3rdTier/3DDentalScanner/" + (tg + 1));
+                    SetStats("3rdTier", "3DDentalScanner", (tg + 1));
+                    tg++;
+                    mainMenuPanel.mmp.shinyDepositImg[i - 1].sprite = mainMenuPanel.mmp.gemSprite[14];
+                }
             }
-            else if ((Random.value < 0.25))
+            else if ((r < 0.25))
             {
                 int R = Random.Range(1, 6);
                 if (R == 1)
                 {
-                    PlayerPrefs.SetString("Gem" + (tg + 1), "common/RubySS/" + (tg + 1));
-                    SetStats("common", "RubySS", (tg + 1));
+                    PlayerPrefs.SetString("Gem" + (tg + 1), "2ndTier/HawleyRetainer/" + (tg + 1));
+                    SetStats("2ndTier", "HawleyRetainer", (tg + 1));
                     tg++;
                     mainMenuPanel.mmp.shinyDepositImg[i - 1].sprite = mainMenuPanel.mmp.gemSprite[5];
 
                 }
                 else if (R == 2)
                 {
-                    PlayerPrefs.SetString("Gem" + (tg + 1), "common/AmethystSS/" + (tg + 1));
-                    SetStats("common", "AmethystSS", (tg + 1));
+                    PlayerPrefs.SetString("Gem" + (tg + 1), "2ndTier/MolarBands/" + (tg + 1));
+                    SetStats("2ndTier", "MolarBands", (tg + 1));
                     tg++;
                     mainMenuPanel.mmp.shinyDepositImg[i - 1].sprite = mainMenuPanel.mmp.gemSprite[6];
 
                 }
                 else if (R == 3)
                 {
-                    PlayerPrefs.SetString("Gem" + (tg + 1), "common/EmeraldS/" + (tg + 1));
-                    SetStats("common", "EmeraldS", (tg + 1));
+                    PlayerPrefs.SetString("Gem" + (tg + 1), "2ndTier/WaterPick/" + (tg + 1));
+                    SetStats("2ndTier", "WaterPick", (tg + 1));
                     tg++;
                     mainMenuPanel.mmp.shinyDepositImg[i - 1].sprite = mainMenuPanel.mmp.gemSprite[7];
 
                 }
                 else if (R == 4)
                 {
-                    PlayerPrefs.SetString("Gem" + (tg + 1), "common/SaphireS/" + (tg + 1));
-                    SetStats("common", "SaphireS", (tg + 1));
+                    PlayerPrefs.SetString("Gem" + (tg + 1), "2ndTier/Elastics/" + (tg + 1));
+                    SetStats("2ndTier", "Elastics", (tg + 1));
                     tg++;
                     mainMenuPanel.mmp.shinyDepositImg[i - 1].sprite = mainMenuPanel.mmp.gemSprite[8];
 
                 }
                 else
                 {
-                    PlayerPrefs.SetString("Gem" + (tg + 1), "common/TopazS/" + (tg + 1));
-                    SetStats("common", "TopazS", (tg + 1));
+                    PlayerPrefs.SetString("Gem" + (tg + 1), "2ndTier/ToothX-Rays/" + (tg + 1));
+                    SetStats("2ndTier", "ToothX-Rays", (tg + 1));
                     tg++;
                     mainMenuPanel.mmp.shinyDepositImg[i - 1].sprite = mainMenuPanel.mmp.gemSprite[9];
 
                 }
             }
-            else if ((Random.value < 0.01))
+            else
             {
-                int R = Random.Range(1, 4);
+                int R = Random.Range(1, 6);
                 if (R == 1)
                 {
-                    PlayerPrefs.SetString("Gem" + (tg + 1), "Legendary/Chronos/" + (tg + 1));
-                    SetStats("Legendary", "Chronos", (tg + 1));
-                    tg++;
-                    mainMenuPanel.mmp.shinyDepositImg[i - 1].sprite = mainMenuPanel.mmp.gemSprite[14];
-
-                }
-                else if (R == 2)
-                {
-                    PlayerPrefs.SetString("Gem" + (tg + 1), "Legendary/Void/" + (tg + 1));
-                    SetStats("Legendary", "Void", (tg + 1));
+                    PlayerPrefs.SetString("Gem" + (tg + 1), "4thTier/MetalBraces/" + (tg + 1));
+                    SetStats("4thTier", "MetalBraces", (tg + 1));
                     tg++;
                     mainMenuPanel.mmp.shinyDepositImg[i - 1].sprite = mainMenuPanel.mmp.gemSprite[15];
 
                 }
-                else
+                else if (R == 2)
                 {
-                    PlayerPrefs.SetString("Gem" + (tg + 1), "Legendary/Transfiguration/" + (tg + 1));
-                    SetStats("Legendary", "Transfiguration", (tg + 1));
+                    PlayerPrefs.SetString("Gem" + (tg + 1), "4thTier/Aligners/" + (tg + 1));
+                    SetStats("4thTier", "Aligners", (tg + 1));
                     tg++;
                     mainMenuPanel.mmp.shinyDepositImg[i - 1].sprite = mainMenuPanel.mmp.gemSprite[16];
+
+                }
+                else if(R == 3)
+                {
+                    PlayerPrefs.SetString("Gem" + (tg + 1), "4thTier/Whitening/" + (tg + 1));
+                    SetStats("4thTier", "Whitening", (tg + 1));
+                    tg++;
+                    mainMenuPanel.mmp.shinyDepositImg[i - 1].sprite = mainMenuPanel.mmp.gemSprite[17];
+                }
+                else if (R == 4)
+                {
+                    PlayerPrefs.SetString("Gem" + (tg + 1), "4thTier/ToothColoredBraces/" + (tg + 1));
+                    SetStats("4thTier", "ToothColoredBraces", (tg + 1));
+                    tg++;
+                    mainMenuPanel.mmp.shinyDepositImg[i - 1].sprite = mainMenuPanel.mmp.gemSprite[18];
+                }
+                else
+                {
+                    PlayerPrefs.SetString("Gem" + (tg + 1), "4thTier/LingualMetalRetainer/" + (tg + 1));
+                    SetStats("4thTier", "LingualMetalRetainer", (tg + 1));
+                    tg++;
+                    mainMenuPanel.mmp.shinyDepositImg[i - 1].sprite = mainMenuPanel.mmp.gemSprite[19];
 
                 }
                 //CheckSelectedGems(i);
@@ -593,26 +660,41 @@ public class BuyingItem : MonoBehaviour
         mainMenuPanel.mmp.legandaryGemStoneGameObject.SetActive(true);
         ObtainedItemText.text = "Legendary GemStone";
         int tg = PlayerPrefs.GetInt("totalgems");
-        int R = Random.Range(1, 4);
+        int R = Random.Range(1, 6);
         if (R == 1)
         {
-            PlayerPrefs.SetString("Gem" + (tg + 1), "Legendary/Chronos/" + (tg + 1));
-            SetStats("Legendary", "Chronos", (tg + 1));
-            mainMenuPanel.mmp.largeGemStoneImg.sprite = mainMenuPanel.mmp.gemSprite[14];
+            PlayerPrefs.SetString("Gem" + (tg + 1), "4thTier/MetalBraces/" + (tg + 1));
+            SetStats("4thTier", "MetalBraces", (tg + 1));
+            mainMenuPanel.mmp.largeGemStoneImg.sprite = mainMenuPanel.mmp.gemSprite[15];
 
         }
         else if (R == 2)
         {
-            PlayerPrefs.SetString("Gem" + (tg + 1), "Legendary/Void/" + (tg + 1));
-            SetStats("Legendary", "Void", (tg + 1));
-            mainMenuPanel.mmp.largeGemStoneImg.sprite = mainMenuPanel.mmp.gemSprite[15];
+            PlayerPrefs.SetString("Gem" + (tg + 1), "4thTier/Aligners/" + (tg + 1));
+            SetStats("4thTier", "Aligners", (tg + 1));
+            mainMenuPanel.mmp.largeGemStoneImg.sprite = mainMenuPanel.mmp.gemSprite[16];
 
+        }
+        else if (R == 3)
+        {
+            PlayerPrefs.SetString("Gem" + (tg + 1), "4thTier/Whitening/" + (tg + 1));
+            SetStats("4thTier", "Whitening", (tg + 1));
+            tg++;
+            mainMenuPanel.mmp.largeGemStoneImg.sprite = mainMenuPanel.mmp.gemSprite[17];
+        }
+        else if (R == 4)
+        {
+            PlayerPrefs.SetString("Gem" + (tg + 1), "4thTier/ToothColoredBraces/" + (tg + 1));
+            SetStats("4thTier", "ToothColoredBraces", (tg + 1));
+            tg++;
+            mainMenuPanel.mmp.largeGemStoneImg.sprite = mainMenuPanel.mmp.gemSprite[18];
         }
         else
         {
-            PlayerPrefs.SetString("Gem" + (tg + 1), "Legendary/Transfiguration/" + (tg + 1));
-            SetStats("Legendary", "Transfiguration", (tg + 1));
-            mainMenuPanel.mmp.largeGemStoneImg.sprite = mainMenuPanel.mmp.gemSprite[16];
+            PlayerPrefs.SetString("Gem" + (tg + 1), "4thTier/LingualMetalRetainer/" + (tg + 1));
+            SetStats("4thTier", "LingualMetalRetainer", (tg + 1));
+            
+            mainMenuPanel.mmp.largeGemStoneImg.sprite = mainMenuPanel.mmp.gemSprite[19];
 
         }
         PlayerPrefs.SetInt("totalgems", PlayerPrefs.GetInt("totalgems") + 1);
@@ -621,7 +703,7 @@ public class BuyingItem : MonoBehaviour
 
     public void SetStats(string type, string name, int number)
     {
-        if (type == "common")
+        if (type == "2ndTier")
         {
             int R = Random.Range(1, 5);
             if (R == 1)
@@ -642,7 +724,7 @@ public class BuyingItem : MonoBehaviour
             }
             //Random Stat
         }
-        if (type == "Rare" || type == "Legendary")
+        if (type == "3rdTier" || type == "4thTier")
         {
             int R = Random.Range(1, 5);
             if (R == 1)

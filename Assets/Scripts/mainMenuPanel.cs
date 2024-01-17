@@ -76,4 +76,8 @@ public class mainMenuPanel : MonoBehaviour
       
         MainMenu.main.shopPanel.SetActive(true);
     }
+    public void selectionPanelClose()
+    {
+        
+    }
 }

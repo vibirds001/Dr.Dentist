@@ -24,7 +24,7 @@ public class ShopItem : MonoBehaviour
     public void chest()
     {
         ChestPanel.SetActive(true); 
-        ShopPanel.SetActive(false);
+        //ShopPanel.SetActive(false);
     }
     public void cross()
     {

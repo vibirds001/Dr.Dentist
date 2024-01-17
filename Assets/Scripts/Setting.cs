@@ -6,9 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class Setting : MonoBehaviour
 {
+    public static Setting s;
     public static Setting instance;
     public GameObject sfxOn;
     public GameObject sfxOff;
+    
 
     public GameObject musicOn;
     public GameObject musicOff;
@@ -23,7 +25,7 @@ public class Setting : MonoBehaviour
 
     void Start()
     {
-
+       
         sfxOn.GetComponent<Button>().onClick.RemoveAllListeners();
         sfxOn.GetComponent<Button>().onClick.AddListener(() => OnClick_SFX_Button_OFF());
         

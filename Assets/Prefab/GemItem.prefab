@@ -33,7 +33,6 @@ RectTransform:
   m_Children:
   - {fileID: 7225870061150907473}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -96,24 +95,28 @@ MonoBehaviour:
   gemName: 
   gemStats: 
   gemIcon: {fileID: 66625071363340875}
+  i: 0
   gemsImages:
-  - {fileID: 21300000, guid: 0119c9c3706d49d4cb415f98c32f0f43, type: 3}
-  - {fileID: 21300000, guid: 33c242ed74c9f3c428dcb2332d9f2b3d, type: 3}
-  - {fileID: 21300000, guid: 535d2586126decc45b2ac4a1f04068d1, type: 3}
-  - {fileID: 21300000, guid: b67b0a0fe5ee75a48a5bdc28b8d622e0, type: 3}
-  - {fileID: 21300000, guid: a57751accb40634448b77be1182d2638, type: 3}
-  - {fileID: 21300000, guid: 686c51e7d4efb0a439715fef12e15f11, type: 3}
-  - {fileID: 21300000, guid: d2b8ae638a13b3043ae75a67ab9f7eb3, type: 3}
-  - {fileID: 21300000, guid: 0c7c491f2942b7647ad6c7dc20d0d758, type: 3}
-  - {fileID: 21300000, guid: b563f727eec4c1f45be5ed6ce738712a, type: 3}
-  - {fileID: 21300000, guid: 3ff550f750214e34ab562abe157a0237, type: 3}
-  - {fileID: 21300000, guid: 0462c3ded862abb4db24ca8e9bf6c2bf, type: 3}
-  - {fileID: 21300000, guid: ab40c4b6c89700043824bcb789cd9a89, type: 3}
-  - {fileID: 21300000, guid: 692279fb0fe4be847acac3a51ebc843e, type: 3}
-  - {fileID: 21300000, guid: 90f2cb5c56cbfc9418b484f1935ed987, type: 3}
-  - {fileID: 21300000, guid: 0c3237a1f51c83c4aaf98758540a07d7, type: 3}
-  - {fileID: 21300000, guid: ff86b19ef7319ef4392b981a6ee7d693, type: 3}
-  - {fileID: 21300000, guid: d9b04cf847546814195d0c1e0e1d3938, type: 3}
+  - {fileID: 21300000, guid: 2c70589ab0a9626428651e9befebe69d, type: 3}
+  - {fileID: 21300000, guid: 4897e1522269f8f409c3b860d30824f7, type: 3}
+  - {fileID: 21300000, guid: e1a546f12aa58b44f9b3ee90e8c632d1, type: 3}
+  - {fileID: 21300000, guid: c550aaf71e3bd8447ace5530627f87a9, type: 3}
+  - {fileID: 21300000, guid: 719b47fc7a520364a91eaff7de700711, type: 3}
+  - {fileID: 21300000, guid: 62bbcadae95fb4943a434ec7df349735, type: 3}
+  - {fileID: 21300000, guid: 76f659b0b7a0d7747b407fded7ebb4b3, type: 3}
+  - {fileID: 21300000, guid: 55ef83bcf22645f479ea6b1ad92b5059, type: 3}
+  - {fileID: 21300000, guid: cb62cd304db2f194a9ce6b06a0730f85, type: 3}
+  - {fileID: 21300000, guid: a6b21bbe98125354f8875998f57e99a0, type: 3}
+  - {fileID: 21300000, guid: cbbf6f7f186c98848b5ad0a2d45d3ce7, type: 3}
+  - {fileID: 21300000, guid: dbafbe14d9a96e04f9d6be13a292abdd, type: 3}
+  - {fileID: 21300000, guid: 91937cc1c80e16c49ab45e8a7060b748, type: 3}
+  - {fileID: 21300000, guid: 14aa70aa880d2d549a76ee3fa09a1554, type: 3}
+  - {fileID: 21300000, guid: 26f46911a71e46046a7cab5d70f5cb23, type: 3}
+  - {fileID: 21300000, guid: cd7a79798c7697a43900189199811f6e, type: 3}
+  - {fileID: 21300000, guid: c26a595b47d83e64080eec110a95c4a3, type: 3}
+  - {fileID: 21300000, guid: a90049c2c295f7c4abb8766bac73a907, type: 3}
+  - {fileID: 21300000, guid: 96fe484305f4bc944a8c1b678710ba23, type: 3}
+  - {fileID: 21300000, guid: c5eda3e2b2972bd40885645bef81ada7, type: 3}
 --- !u!1 &2086280468853318139
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,7 +150,6 @@ RectTransform:
   m_Children:
   - {fileID: 314119670783115132}
   m_Father: {fileID: 66625071363340874}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -279,7 +281,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7225870061150907473}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}

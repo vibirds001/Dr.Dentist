@@ -38,12 +38,12 @@ public class MainMenu : MonoBehaviour
             ContinueButton.GetComponent<Button>().interactable = false;
 
         }
-        if (PlayerPrefs.GetInt("Level", 0) < 1)
-        {
-            PlayerPrefs.SetInt("Level", 0);
-            OpenTutorialMode();
+        //if (PlayerPrefs.GetInt("Level", 0) < 1)
+        //{
+        //    PlayerPrefs.SetInt("Level", 0);
+        //    OpenTutorialMode();
 
-        }
+        //}
 
     }
     public void Update()

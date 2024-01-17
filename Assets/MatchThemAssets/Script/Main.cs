@@ -31,10 +31,13 @@ public class Main : MonoBehaviour
     public GameObject _particleEffectWhenMatchCross;//The gameobject of the effect when the objects are matching
     public GameObject _particleEffectWhenMatchAllType;//The gameobject of the effect when the objects are matching
     public GameObject _particleEffectWhenMatchALit;//The gameobject of the effect when the objects are matching
+    public GameObject teeths;//The gameobject of the effect when the objects are matching
+   
     public bool _canTransitDiagonally = false;//Indicate if we can switch diagonally
     public int _scoreIncrement;//The amount of point to increment each time we find matching tiles
-    private int _scoreTotal;//The score 
+    public int _scoreTotal;//The score 
     private int _AuraTotal = 0;//The aura
+
 
     private ArrayList _currentParticleEffets = new ArrayList();//the array that will contain all the matching particle that we will destroy after
     public AudioClip MatchSound;//the sound effect when matched tiles are found
@@ -317,6 +320,8 @@ public class Main : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+           
         if (iSMakeComboTutorial == true && PlayerPrefs.GetString("GameMode") == "Tutorial")
         {
 
@@ -607,6 +612,7 @@ public class Main : MonoBehaviour
                     }
                     print("extra " + extra);
                     CalculateScore(Matches.Count, extra);
+                    
                 }
                // Additionalpoint(GemManager.gm.gemName);
 
@@ -657,7 +663,7 @@ public class Main : MonoBehaviour
                     }
                 }
 
-                if (gemType == "default")
+                if (gemType == "1stTier")
                 {
                     if (Matches.Count == 4 || Matches.Count == 5)
                     {
@@ -685,7 +691,7 @@ public class Main : MonoBehaviour
                         Destroy(destroy);
                     }
                 }
-                if (gemType == "common")
+                if (gemType == "2ndTier")
                 {
                     if (Matches.Count == 4)
                     {
@@ -699,50 +705,50 @@ public class Main : MonoBehaviour
                     }
 
                 }
-                if (gemType == "common")
+                if (gemType == "2ndTier")
                 {
                     if (Matches.Count == 5)
                     {
-                        if (gemName == "RubySS")
+                        if (gemName == "HawleyRetainer")
                         {
-                            DestroyCommonGemForSpecial("RubySS");
+                            DestroyCommonGemForSpecial("HawleyRetainer");
                         }
 
                     }
                     if (Matches.Count == 5)
                     {
-                        if (gemName == "AmethystSS")
+                        if (gemName == "MolarBands")
                         {
-                            DestroyCommonGemForSpecial("AmethystSS");
+                            DestroyCommonGemForSpecial("MolarBands");
                         }
 
                     }
                     if (Matches.Count == 5)
                     {
-                        if (gemName == "EmeraldS")
+                        if (gemName == "WaterPick")
                         {
-                            DestroyCommonGemForSpecial("EmeraldS");
+                            DestroyCommonGemForSpecial("WaterPick");
                         }
 
                     }
                     if (Matches.Count == 5)
                     {
-                        if (gemName == "SaphireS")
+                        if (gemName == "Elastics")
                         {
-                            DestroyCommonGemForSpecial("SaphireS");
+                            DestroyCommonGemForSpecial("Elastics");
                         }
 
                     }
                     if (Matches.Count == 5)
                     {
-                        if (gemName == "TopazS")
+                        if (gemName == "ToothX-Rays")
                         {
-                            DestroyCommonGemForSpecial("TopazS");
+                            DestroyCommonGemForSpecial("ToothX-Rays");
                         }
 
                     }
                 }
-                if (gemName == "Temporal")
+                if (gemName == "Expander")
                 {
                     if (Matches.Count == 5)
                     {
@@ -758,7 +764,7 @@ public class Main : MonoBehaviour
                     }
 
                 }
-                if (gemName == "Salamander")
+                if (gemName == "PlasticRetainer")
                 {
                     if (Matches.Count == 4)
                     {
@@ -775,7 +781,7 @@ public class Main : MonoBehaviour
                     //
 
                 }
-                if (gemName == "Basic")
+                if (gemName == "3DPrinter")
                 {
                     if (Matches.Count == 4)
                     {
@@ -787,13 +793,13 @@ public class Main : MonoBehaviour
                     }
                     if (Matches.Count == 5)
                     {
-                        if (gemName == "Basic")
+                        if (gemName == "3DPrinter")
                         {
-                            DestroyCommonGemForSpecial("Basic");
+                            DestroyCommonGemForSpecial("3DPrinter");
                         }
                     }
                 }
-                if (gemName == "Multiplier")
+                if (gemName == "WhiteningTray")
                 {
                     if (Matches.Count == 4)
                     {
@@ -808,7 +814,7 @@ public class Main : MonoBehaviour
                         comboStreakTenSecond();
                     }
                 }
-                if (gemName == "Chronos")
+                if (gemName == "MetalBraces")
                 {
                     if (Matches.Count == 5)
                     {
@@ -819,12 +825,12 @@ public class Main : MonoBehaviour
                         ChoronusGemEffectForLShape();
                     }
                 }
-                if (gemName == "Void")
+                if (gemName == "Aligners")
                 {
                     if (Matches.Count == 5)
                         ClearBoardVoid();
                 }
-                if (gemName == "Transfiguration")
+                if (gemName == "Whitening")
                 {
                     if (Matches.Count == 4)
                     {
@@ -841,6 +847,7 @@ public class Main : MonoBehaviour
 
                 }
 
+                
 
 
                 foreach (GameObject go in Matches)
@@ -941,6 +948,12 @@ public class Main : MonoBehaviour
         {
             _scoreTotal = _scoreTotal + 1;
         }
+
+        else if (_scoreTotal >= 1000)
+        {
+
+        }
+        teeth.t.CleanTeeth();
         //else
         //{
         //    _scoreTotal = _scoreTotal - modOfScore + 5;
@@ -1324,6 +1337,7 @@ public class Main : MonoBehaviour
 
     public void OpenPausePanel()
     {
+        teeths.SetActive(false);
         isPause = true;
         string fileData = SaveGame.ReadString(Application.persistentDataPath + "/test.txt");
         if (fileData == null)
@@ -1346,6 +1360,7 @@ public class Main : MonoBehaviour
     }
     public void ClosePausePanel()
     {
+        teeths.SetActive(true);
         ObtainedItems.SetActive(true);
         pausePanel.SetActive(false);
         Time.timeScale = 1;
@@ -1530,73 +1545,85 @@ public class Main : MonoBehaviour
         gem.GetComponent<Tile>().GemType = n[0];
 
         //gem.GetComponent<SpriteRenderer>().sprite = null;
-        if (n[1].Equals("Ruby"))
+        if (n[1].Equals("ToothBrush"))
         {
             gem.GetComponent<SpriteRenderer>().sprite = gemsImages[0];
         }
-        else if (n[1].Equals("Amethyst"))
+        else if (n[1].Equals("Toothpaste"))
         {
             gem.GetComponent<SpriteRenderer>().sprite = gemsImages[1];
         }
-        else if (n[1].Equals("Emerald"))
+        else if (n[1].Equals("Floss"))
         {
             gem.GetComponent<SpriteRenderer>().sprite = gemsImages[2];
         }
-        else if (n[1].Equals("Saphire"))
+        else if (n[1].Equals("MouthWash"))
         {
             gem.GetComponent<SpriteRenderer>().sprite = gemsImages[3];
         }
-        else if (n[1].Equals("Topaz"))
+        else if (n[1].Equals("TongueScraper"))
         {
             gem.GetComponent<SpriteRenderer>().sprite = gemsImages[4];
         }
-        else if (n[1].Equals("RubySS"))
+        else if (n[1].Equals("HawleyRetainer"))
         {
             gem.GetComponent<SpriteRenderer>().sprite = gemsImages[5];
         }
-        else if (n[1].Equals("AmethystSS"))
+        else if (n[1].Equals("MolarBands"))
         {
             gem.GetComponent<SpriteRenderer>().sprite = gemsImages[6];
         }
-        else if (n[1].Equals("EmeraldS"))
+        else if (n[1].Equals("WaterPick"))
         {
             gem.GetComponent<SpriteRenderer>().sprite = gemsImages[7];
         }
-        else if (n[1].Equals("SaphireS"))
+        else if (n[1].Equals("Elastics"))
         {
             gem.GetComponent<SpriteRenderer>().sprite = gemsImages[8];
         }
-        else if (n[1].Equals("TopazS"))
+        else if (n[1].Equals("ToothX-Rays"))
         {
             gem.GetComponent<SpriteRenderer>().sprite = gemsImages[9];
         }
-        else if (n[1].Equals("Temporal"))
+        else if (n[1].Equals("Expander"))
         {
             gem.GetComponent<SpriteRenderer>().sprite = gemsImages[10];
         }
-        else if (n[1].Equals("Salamander"))
+        else if (n[1].Equals("PlasticRetainer"))
         {
             gem.GetComponent<SpriteRenderer>().sprite = gemsImages[11];
         }
-        else if (n[1].Equals("Basic"))
+        else if (n[1].Equals("3DPrinter"))
         {
             gem.GetComponent<SpriteRenderer>().sprite = gemsImages[12];
         }
-        else if (n[1].Equals("Multiplier"))
+        else if (n[1].Equals("WhiteningTray"))
         {
             gem.GetComponent<SpriteRenderer>().sprite = gemsImages[13];
         }
-        else if (n[1].Equals("Chronos"))
+        else if (n[1].Equals("3DDentalScanner"))
         {
             gem.GetComponent<SpriteRenderer>().sprite = gemsImages[14];
         }
-        else if (n[1].Equals("Void"))
+        else if (n[1].Equals("MetalBraces"))
         {
             gem.GetComponent<SpriteRenderer>().sprite = gemsImages[15];
         }
-        else if (n[1].Equals("Transfiguration"))
+        else if (n[1].Equals("Aligners"))
         {
             gem.GetComponent<SpriteRenderer>().sprite = gemsImages[16];
+        }
+        else if (n[1].Equals("Whitening"))
+        {
+            gem.GetComponent<SpriteRenderer>().sprite = gemsImages[17];
+        }
+        else if (n[1].Equals("ToothColoredBraces"))
+        {
+            gem.GetComponent<SpriteRenderer>().sprite = gemsImages[18];
+        }
+        else if (n[1].Equals("LingualMetalRetainer"))
+        {
+            gem.GetComponent<SpriteRenderer>().sprite = gemsImages[19];
         }
     }
     public void DestroyforCommonGem()
@@ -1907,7 +1934,7 @@ public class Main : MonoBehaviour
             {
                 GameObject go = _arrayOfShapes[i, j].gameObject;
                 gemType = go.GetComponent<Tile>().GemType;
-                if (gemType == "common" && gemName == go.GetComponent<Tile>().GemName)
+                if (gemType == "2ndTier" && gemName == go.GetComponent<Tile>().GemName)
                 {
                     var destroyingParticleallType = GameObject.Instantiate(_particleEffectWhenMatchAllType as GameObject, new Vector3(go.transform.position.x, go.transform.position.y, -2), transform.rotation) as GameObject;
                     Destroy(destroyingParticleallType, 1f);
@@ -2207,41 +2234,41 @@ public class Main : MonoBehaviour
                 gemObject.GetComponent<SpriteRenderer>().sprite = item;
                 gemObject.name = gemName;
                 gem.GetComponent<Tile>().GemName = gemObject.GetComponent<SpriteRenderer>().sprite.name;
-                if (item.name == "Ruby" || item.name == "Amethyst" || item.name == "Emerald" || item.name == "Saphire" || item.name == "Topaz")
+                if (item.name == "ToothBrush" || item.name == "Toothpaste" || item.name == "Floss" || item.name == "MouthWash" || item.name == "TongueScraper")
                 {
-                    if (item.name == "Ruby")
+                    if (item.name == "ToothBrush")
                     {
                         gem.GetComponent<Tile>().TileNumber = 1;
                     }
-                    else if (item.name == "Amethyst")
+                    else if (item.name == "Toothpaste")
                     {
                         gem.GetComponent<Tile>().TileNumber = 4;
                     }
-                    else if (item.name == "Emerald")
+                    else if (item.name == "Floss")
                     {
                         gem.GetComponent<Tile>().TileNumber = 0;
                     }
-                    else if (item.name == "Saphire")
+                    else if (item.name == "MouthWash")
                     {
                         gem.GetComponent<Tile>().TileNumber = 3;
                     }
-                    else if (item.name == "Topaz")
+                    else if (item.name == "TongueScraper")
                     {
                         gem.GetComponent<Tile>().TileNumber = 2;
                     }
-                    gem.GetComponent<Tile>().GemType = "default";
+                    gem.GetComponent<Tile>().GemType = "1stTier";
                 }
-                else if (item.name == "RubySS" || item.name == "AmethystSS" || item.name == "EmeraldS" || item.name == "SaphireS" || item.name == "TopazS")
+                else if (item.name == "HawleyRetainer" || item.name == "MolarBands" || item.name == "WaterPick" || item.name == "Elastics" || item.name == "ToothX-Rays")
                 {
-                    gem.GetComponent<Tile>().GemType = "common";
+                    gem.GetComponent<Tile>().GemType = "2ndTier";
                 }
-                else if (item.name == "Temporal" || item.name == "Salamander" || item.name == "Basic" || item.name == "Multiplier")
+                else if (item.name == "Expander" || item.name == "PlasticRetainer" || item.name == "3DPrinter" || item.name == "WhiteningTray" || item.name == "3DDentalScanner")
                 {
-                    gem.GetComponent<Tile>().GemType = "Rare";
+                    gem.GetComponent<Tile>().GemType = "3rdTier";
                 }
-                else if (item.name == "Chronos" || item.name == "Void" || item.name == "Transfiguration")
+                else if (item.name == "MetalBraces" || item.name == "Aligners" || item.name == "Whitening"|| item.name == "ToothColoredBraces" || item.name == "LingualMetalRetainer")
                 {
-                    gem.GetComponent<Tile>().GemType = "Legendary";
+                    gem.GetComponent<Tile>().GemType = "4thTier";
                 }
 
             }
