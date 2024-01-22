@@ -71,47 +71,47 @@ public class teeth : MonoBehaviour
         }
         if (Main.instance._scoreTotal >= 14000)
         {
-            tooth[14].SetActive(false);
+            tooth[13].SetActive(false);
         }
         if (Main.instance._scoreTotal >= 15000)
         {
-            tooth[15].SetActive(false);
+            tooth[14].SetActive(false);
         }
         if (Main.instance._scoreTotal >= 16000)
         {
-            tooth[16].SetActive(false);
+            tooth[15].SetActive(false);
         }
         if (Main.instance._scoreTotal >= 17000)
         {
-            tooth[17].SetActive(false);
+            tooth[16].SetActive(false);
         }
         if (Main.instance._scoreTotal >= 18000)
         {
-            tooth[18].SetActive(false);
+            tooth[17].SetActive(false);
         }
         if (Main.instance._scoreTotal >= 19000)
         {
-            tooth[19].SetActive(false);
+            tooth[18].SetActive(false);
         }
         if (Main.instance._scoreTotal >= 20000)
         {
-            tooth[20].SetActive(false);
+            tooth[19].SetActive(false);
         }
         if (Main.instance._scoreTotal >= 21000)
         {
-            tooth[21].SetActive(false);
+            tooth[20].SetActive(false);
         }
         if (Main.instance._scoreTotal >= 22000)
         {
-            tooth[22].SetActive(false);
+            tooth[21].SetActive(false);
         }
         if (Main.instance._scoreTotal >= 23000)
         {
-            tooth[23].SetActive(false);
+            tooth[22].SetActive(false);
         }
         if (Main.instance._scoreTotal >= 24000)
         {
-            tooth[24].SetActive(false);
+            tooth[23].SetActive(false);
         }
     }
 }

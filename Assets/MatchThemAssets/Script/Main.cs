@@ -3,7 +3,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -32,7 +31,7 @@ public class Main : MonoBehaviour
     public GameObject _particleEffectWhenMatchAllType;//The gameobject of the effect when the objects are matching
     public GameObject _particleEffectWhenMatchALit;//The gameobject of the effect when the objects are matching
     public GameObject teeths;//The gameobject of the effect when the objects are matching
-   
+
     public bool _canTransitDiagonally = false;//Indicate if we can switch diagonally
     public int _scoreIncrement;//The amount of point to increment each time we find matching tiles
     public int _scoreTotal;//The score 
@@ -142,7 +141,7 @@ public class Main : MonoBehaviour
 
     void Start()
     {
-        for(int i = 1; i<6; i++)
+        for (int i = 1; i < 6; i++)
         {
             string name = PlayerPrefs.GetString("Selectedgem" + i);
             string[] n = name.Split("/");
@@ -165,6 +164,7 @@ public class Main : MonoBehaviour
         {
             levelCount = PlayerPrefs.GetInt("Level", 1);
             goalCount = 5000 + levelCount * 5000;
+
             if (PlayerPrefs.GetString("Game") == "Load" && PlayerPrefs.GetInt("Save") > 0)
             {
                 _scoreTotal = PlayerPrefs.GetInt("Score", 0);
@@ -320,8 +320,8 @@ public class Main : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-           
+
+
         if (iSMakeComboTutorial == true && PlayerPrefs.GetString("GameMode") == "Tutorial")
         {
 
@@ -466,7 +466,7 @@ public class Main : MonoBehaviour
                 updatedTotalAura += additionalAura;
 
                 PlayerPrefs.SetInt("totalaura", updatedTotalAura);
-                
+
                 //GetComponent<MainMenu>().aura();
 
                 // Save changes to PlayerPrefs
@@ -479,11 +479,11 @@ public class Main : MonoBehaviour
             if (_scoreTotal >= goalCount)
             {
                 SoundManager.instance.Play_LEVEL_COMPLETE_Sound();
-                _scoreTotal = 0;
+                //_scoreTotal = 0;
                 goalCount += 5000;
                 timeRemaining = timerCount;
                 levelCount++;
-                PlayerPrefs.SetInt("Level", levelCount);
+                //PlayerPrefs.SetInt("Level", levelCount);
             }
         }
         bool shouldTransit = false;
@@ -612,25 +612,25 @@ public class Main : MonoBehaviour
                     }
                     print("extra " + extra);
                     CalculateScore(Matches.Count, extra);
-                    
+
                 }
-               // Additionalpoint(GemManager.gm.gemName);
+                // Additionalpoint(GemManager.gm.gemName);
 
                 string gemName = "AA";
                 string gemType = "gg";
                 bool lit = false;
-                
+
                 if (_FirstObject != null)
                 {
                     gemName = _FirstObject.GetComponent<Tile>().GemName;
-                 
+
                     gemType = _FirstObject.GetComponent<Tile>().GemType;
                     lit = _FirstObject.GetComponent<Tile>().GemLit;
                 }
                 if (_SecondObject != null)
                 {
                     gemName = _FirstObject.GetComponent<Tile>().GemName;
-                  
+
                 }
                 int startingX = 0; // Initialize prevI for each outer loop iteration
                 int startingY = 0; // Initialize prevJ for each inner loop iteration
@@ -696,7 +696,7 @@ public class Main : MonoBehaviour
                     if (Matches.Count == 4)
                     {
                         DestroyforCommonGem();
-                 
+
 
                     }
                     if ((LShapeX == true) && (LShapeY == true))
@@ -847,7 +847,7 @@ public class Main : MonoBehaviour
 
                 }
 
-                
+
 
 
                 foreach (GameObject go in Matches)
@@ -944,7 +944,7 @@ public class Main : MonoBehaviour
         {
             _scoreTotal += matchCount * 2;
         }
-        else if(statsAdditionalpoint == true)
+        else if (statsAdditionalpoint == true)
         {
             _scoreTotal = _scoreTotal + 1;
         }
@@ -969,7 +969,7 @@ public class Main : MonoBehaviour
         timeRemaining = timeRemaining + timeAddition;
         timeBase++;
 
-      
+
         //Update the score
         //  _scoreTotal += Matches.Count * _scoreIncrement;
 
@@ -2266,7 +2266,7 @@ public class Main : MonoBehaviour
                 {
                     gem.GetComponent<Tile>().GemType = "3rdTier";
                 }
-                else if (item.name == "MetalBraces" || item.name == "Aligners" || item.name == "Whitening"|| item.name == "ToothColoredBraces" || item.name == "LingualMetalRetainer")
+                else if (item.name == "MetalBraces" || item.name == "Aligners" || item.name == "Whitening" || item.name == "ToothColoredBraces" || item.name == "LingualMetalRetainer")
                 {
                     gem.GetComponent<Tile>().GemType = "4thTier";
                 }
@@ -2376,7 +2376,7 @@ public class Main : MonoBehaviour
     {
         percentage = Random.Range(1, 6);
         increment += percentage / 100;
-        
+
     }
     private float additionalTime = 0;
     public void AdditionalTimeLimit()
@@ -2389,12 +2389,12 @@ public class Main : MonoBehaviour
     {
         crystallizationCount++;
     }
-    public bool statsAdditionalpoint  = false;
+    public bool statsAdditionalpoint = false;
     public string pointGems = "";
     public void Additionalpoint(string gemName)
     {
         print(gemName);
-        pointGems += gemName+"/";
+        pointGems += gemName + "/";
         statsAdditionalpoint = true;
     }
 
