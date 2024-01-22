@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1156,10 +1156,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 9999
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1183,7 +1183,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26.85
+  m_fontSize: 28.2
   m_fontSizeBase: 27.49
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2310,6 +2310,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LunarConsole
       objectReference: {fileID: 0}
+    - target: {fileID: 183544, guid: 6d0acc00cc82d436b9d11446d2ddfef6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 406632, guid: 6d0acc00cc82d436b9d11446d2ddfef6, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -2698,7 +2702,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Shiny Rock
+  m_text: Clean Tools
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 70b9666d98d5a0041b028765672a8289, type: 2}
   m_sharedMaterial: {fileID: 1826317376331840953, guid: 70b9666d98d5a0041b028765672a8289, type: 2}
@@ -3984,7 +3988,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.5396118, y: 85.00012}
+  m_AnchoredPosition: {x: 0, y: 85.00012}
   m_SizeDelta: {x: 442.8204, y: 332.9856}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &527593149
@@ -4991,10 +4995,10 @@ RectTransform:
   - {fileID: 98067612}
   m_Father: {fileID: 1330245260}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 453, y: -114}
-  m_SizeDelta: {x: 150, y: 50}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -114}
+  m_SizeDelta: {x: 250, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &713198028
 MonoBehaviour:
@@ -5016,7 +5020,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 447768aa11732104ea8c407367fe9e62, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 01399e0f1436ec846a1a6b24089a769f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5416,7 +5420,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Shiny Deposit '
+  m_text: 'Shiny tools '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 70b9666d98d5a0041b028765672a8289, type: 2}
   m_sharedMaterial: {fileID: 1826317376331840953, guid: 70b9666d98d5a0041b028765672a8289, type: 2}
@@ -8649,8 +8653,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 189}
-  m_SizeDelta: {x: 617.6415, y: 499.7611}
+  m_AnchoredPosition: {x: 0, y: 220}
+  m_SizeDelta: {x: 600, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1288839203
 MonoBehaviour:
@@ -10580,8 +10584,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 22, y: 0}
-  m_SizeDelta: {x: 32.4637, y: 28.8597}
+  m_AnchoredPosition: {x: 30, y: 3}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1548848807
 MonoBehaviour:
@@ -11445,7 +11449,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Gems
+  m_Text: Tools
 --- !u!222 &1689311522
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11687,7 +11691,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Unrefined Legendary
 
-    Gemstone'
+    tools'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 70b9666d98d5a0041b028765672a8289, type: 2}
   m_sharedMaterial: {fileID: 1826317376331840953, guid: 70b9666d98d5a0041b028765672a8289, type: 2}
@@ -12950,7 +12954,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Large Deposit '
+  m_text: 'Large tools '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 70b9666d98d5a0041b028765672a8289, type: 2}
   m_sharedMaterial: {fileID: 1826317376331840953, guid: 70b9666d98d5a0041b028765672a8289, type: 2}
@@ -13591,7 +13595,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Bag of Debris '
+  m_text: 'Bag of tools '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 70b9666d98d5a0041b028765672a8289, type: 2}
   m_sharedMaterial: {fileID: 1826317376331840953, guid: 70b9666d98d5a0041b028765672a8289, type: 2}

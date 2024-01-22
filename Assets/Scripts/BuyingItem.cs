@@ -70,7 +70,7 @@ public class BuyingItem : MonoBehaviour
     public void BagofDebris()
     {
         gemNameText.text = "Bag of Debris";
-        DescriptionText.text = "Grant 3 common gem";
+        DescriptionText.text = "Grant 3 common tools";
         BuyWithAuraText.text = "Buy      " + BagOfDebris;
         BuyButton.onClick.RemoveAllListeners();
         BuyButton.onClick.AddListener(() => buyButtonBagOfDebris(BagOfDebris, "Bag of Debris"));
@@ -81,7 +81,7 @@ public class BuyingItem : MonoBehaviour
     public void LargeDeposit()
     {
         gemNameText.text = "Large Deposit ";
-        DescriptionText.text = "Grant 5 gems";
+        DescriptionText.text = "Grant 5 tools";
         BuyWithAuraText.text = "Buy     " + LargeDepositGemPrice;
         BuyButton.onClick.RemoveAllListeners();
         BuyButton.onClick.AddListener(() => buyButtonLargeDeposit(LargeDepositGemPrice, "Large Deposit"));
@@ -92,7 +92,7 @@ public class BuyingItem : MonoBehaviour
     public void ShinyRock()
     {
         gemNameText.text = "Shiny Rock ";
-        DescriptionText.text = "Grant 1 Rare Stone";
+        DescriptionText.text = "Grant 1 Rare tools";
         BuyWithAuraText.text = "Buy     " + ShinyRockGemPrice;
         BuyButton.onClick.RemoveAllListeners();
         BuyButton.onClick.AddListener(() => buyButtoShinyRock(ShinyRockGemPrice, "Shiny Rock "));
@@ -103,7 +103,7 @@ public class BuyingItem : MonoBehaviour
     public void ShinyDeposit()
     {
         gemNameText.text = "Shiny Deposit";
-        DescriptionText.text = "Grant 3 gems.";
+        DescriptionText.text = "Grant 3 tools.";
         BuyWithAuraText.text = "Buy   " + ShinyDepositGemPrice;
         BuyButton.onClick.RemoveAllListeners();
         BuyButton.onClick.AddListener(() => buyButtonShinyDeposit(ShinyDepositGemPrice, "Shiny Deposit"));
@@ -114,7 +114,7 @@ public class BuyingItem : MonoBehaviour
     public void UnrefinedLegendaryGemstone()
     {
         gemNameText.text = "Legendary Gemstone";
-        DescriptionText.text = "Grant 1 Legendary Gem ";
+        DescriptionText.text = "Grant 1 Legendary tool ";
         BuyWithAuraText.text = "Buy      " + ULGemPrice;
         BuyButton.onClick.RemoveAllListeners();
         BuyButton.onClick.AddListener(() => buyButtonLegendaryGemStone(ULGemPrice, "Legendary Gemstone"));
