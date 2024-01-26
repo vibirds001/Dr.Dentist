@@ -30,7 +30,7 @@ public class Main : MonoBehaviour
     public GameObject _particleEffectWhenMatchCross;//The gameobject of the effect when the objects are matching
     public GameObject _particleEffectWhenMatchAllType;//The gameobject of the effect when the objects are matching
     public GameObject _particleEffectWhenMatchALit;//The gameobject of the effect when the objects are matching
-    public GameObject teeths;//The gameobject of the effect when the objects are matching
+    //public GameObject teeths;//The gameobject of the effect when the objects are matching
 
     public bool _canTransitDiagonally = false;//Indicate if we can switch diagonally
     public int _scoreIncrement;//The amount of point to increment each time we find matching tiles
@@ -64,7 +64,7 @@ public class Main : MonoBehaviour
     public bool isFreeze = false;
     public bool selectedGem = false;
     public GameObject loseLevel;
-    public GameObject LevelText;
+
     public GameObject ScoreText;
     public GameObject pauseScoreText;
     public GameObject pauseTimerText;
@@ -105,7 +105,7 @@ public class Main : MonoBehaviour
 
     public GameObject MakeMatchTutorial;
     public GameObject MakeComboTutorial;
-    public GameObject SkipButton;
+   
 
 
     public static int timeBase;
@@ -153,7 +153,7 @@ public class Main : MonoBehaviour
         _mainMenu = GetComponent<MainMenu>();
         BackButton.SetActive(true);
         PauseButton.SetActive(true);
-        SkipButton.SetActive(false);
+        //SkipButton.SetActive(false);
         MakeMatchTutorial.SetActive(false);
         MakeComboTutorial.SetActive(false);
         //PlayerPrefs.SetInt("totalaura", _scoreTotal);
@@ -228,7 +228,7 @@ public class Main : MonoBehaviour
             }
             timerText.enabled = true;
             goalText.enabled = true;
-            LevelText.SetActive(false);
+            //LevelText.SetActive(false);
             divider.SetActive(true);
             pauseScoreGO.SetActive(true);
             pauseTimerGO.SetActive(true);
@@ -250,7 +250,7 @@ public class Main : MonoBehaviour
             }
             timerText.enabled = true;
             goalText.enabled = false;
-            LevelText.SetActive(false);
+           //LevelText.SetActive(false);
             divider.SetActive(true);
             pauseScoreGO.SetActive(true);
             pauseTimerGO.SetActive(true);
@@ -388,6 +388,7 @@ public class Main : MonoBehaviour
             }
             else if (GameStart)
             {
+                Time.timeScale = 0f;
                 loseLevel.SetActive(true);
                 //save aura
 
@@ -475,7 +476,7 @@ public class Main : MonoBehaviour
                 UpdateColliederAllTiles(false, 80);
             }
 
-            goalText.text = "GOAL: " + goalCount.ToString();
+            goalText.text = "$: " + goalCount.ToString();
             if (_scoreTotal >= goalCount)
             {
                 SoundManager.instance.Play_LEVEL_COMPLETE_Sound();
@@ -884,8 +885,8 @@ public class Main : MonoBehaviour
             }
         }
         //Update the score
-        LevelText.GetComponent<Text>().text = "Level : " + levelCount.ToString();
-        ScoreText.GetComponent<Text>().text = "Score : " + _scoreTotal.ToString();
+        //LevelText.GetComponent<Text>().text = "Level : " + levelCount.ToString();
+        ScoreText.GetComponent<Text>().text = "Coins : " + _scoreTotal.ToString();
 
         //  (GetComponent(typeof(TextMesh)) as TextMesh).text = "     LEVEL: " + levelCount + "   SCORE: " + _scoreTotal.ToString();
     }
@@ -1195,7 +1196,7 @@ public class Main : MonoBehaviour
 
     // Do Empty Tile Move Down
     private void DoEmptyDown(ref GameObject[,] cells)
-    {   //replace the empty tiles with the ones above
+    {   //replace the empty tiles witthe ones above
         for (int x = 0; x <= cells.GetUpperBound(0); x++)
         {
             for (int y = 0; y <= cells.GetUpperBound(1); y++)
@@ -1337,7 +1338,7 @@ public class Main : MonoBehaviour
 
     public void OpenPausePanel()
     {
-        teeths.SetActive(false);
+        //teeths.SetActive(false);
         isPause = true;
         string fileData = SaveGame.ReadString(Application.persistentDataPath + "/test.txt");
         if (fileData == null)
@@ -1360,7 +1361,7 @@ public class Main : MonoBehaviour
     }
     public void ClosePausePanel()
     {
-        teeths.SetActive(true);
+        //teeths.SetActive(true);
         ObtainedItems.SetActive(true);
         pausePanel.SetActive(false);
         Time.timeScale = 1;
@@ -1517,12 +1518,12 @@ public class Main : MonoBehaviour
         goalText.enabled = false;
         // ScoreText.SetActive(false);
         divider.SetActive(false);
-        LevelText.SetActive(false);
+        //LevelText.SetActive(false);
         BackButton.SetActive(false);
         PauseButton.SetActive(false);
         pauseScoreGO.SetActive(false);
         pauseTimerGO.SetActive(false);
-        SkipButton.SetActive(true);
+       //SkipButton.SetActive(true);
     }
     void UpdateColliederRange(int start, int end, int col)
     {

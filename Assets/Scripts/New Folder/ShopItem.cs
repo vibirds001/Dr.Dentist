@@ -31,5 +31,10 @@ public class ShopItem : MonoBehaviour
         ChestPanel.SetActive(false);
         ShopPanel.SetActive(true);
     }
+    public void Close()
+    {
+        mainMenuPanel.mmp.missingtoolPanel.SetActive(false);
+        MainMenuPanel.SetActive(true);
+    }
 }
 

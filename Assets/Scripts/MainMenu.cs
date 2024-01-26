@@ -13,14 +13,31 @@ public class MainMenu : MonoBehaviour
     public static MainMenu main;
     private ShopItem si;
     
+    
     private void Awake()
     {
         main = this;
+        if (!PlayerPrefs.HasKey("firsttime"))
+        {
+            PlayerPrefs.SetString("Gem1", "1stTier/ToothBrush/1");
+            PlayerPrefs.SetString("Gem2", "1stTier/Toothpaste/2");
+            PlayerPrefs.SetString("Gem3", "1stTier/Floss/3");
+            PlayerPrefs.SetString("Gem4", "1stTier/MouthWash/4");
+            PlayerPrefs.SetString("Gem5", "1stTier/TongueScraper/5");
+
+            PlayerPrefs.SetString("Selectedgem1", "1stTier/ToothBrush/1");
+            PlayerPrefs.SetString("Selectedgem2", "1stTier/Toothpaste/2");
+            PlayerPrefs.SetString("Selectedgem3", "1stTier/Floss/3");
+            PlayerPrefs.SetString("Selectedgem4", "1stTier/MouthWash/4");
+            PlayerPrefs.SetString("Selectedgem5", "1stTier/TongueScraper/5");
+
+            PlayerPrefs.SetInt("firsttime", 1);
+        }
     }
 
     void Start()
     {
-
+       // mainMenuPanel.mmp.missingtoolPanel.SetActive(false);
 
 
         si = GetComponent<ShopItem>();
@@ -57,6 +74,7 @@ public class MainMenu : MonoBehaviour
         {
             if (!PlayerPrefs.HasKey("Selectedgem" + i))
             {
+                mainMenuPanel.mmp.missingtoolPanel.SetActive(true);
                 selected = false;
             }
         }
@@ -71,11 +89,14 @@ public class MainMenu : MonoBehaviour
     }
     public void ClassicMode()
     {
+        Main.instance.goalText.text = "Classic Mode";
+
         bool selected = true;
         for (int i = 1; i < 6; i++)
         {
             if (!PlayerPrefs.HasKey("Selectedgem" + i))
             {
+                mainMenuPanel.mmp.missingtoolPanel.SetActive(true);
                 selected = false;
             }
         }

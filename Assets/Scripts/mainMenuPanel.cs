@@ -11,6 +11,8 @@ public class mainMenuPanel : MonoBehaviour
     public static mainMenuPanel mmp;
     public GameObject ShopPanel;
 
+    public GameObject missingtoolPanel;
+
     public Image[] bagOfDebrisImg;
     public Image[] LargeDepositImg;
     public Image shinyRockImg;
@@ -76,8 +78,5 @@ public class mainMenuPanel : MonoBehaviour
       
         MainMenu.main.shopPanel.SetActive(true);
     }
-    public void selectionPanelClose()
-    {
-        
-    }
+    
 }

@@ -9,11 +9,13 @@ public class GameController : MonoBehaviour
 
     public void quit(){
     	Application.Quit();
+        Time.timeScale = 1f;
     }
 
     public void changeScene(string scene){
         StartCoroutine(LoadSceneWithAnim());
         SceneManager.LoadScene(scene);
+        Time.timeScale = 1f;  
     }
 
     IEnumerator LoadSceneWithAnim()

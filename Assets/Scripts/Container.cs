@@ -14,7 +14,8 @@ public class Container : MonoBehaviour
     public Sprite[] gemsImages;
     public static Container c;
     public Sprite RemoveImage;
-
+    GridLayoutGroup GLG;
+    public RectTransform gridContainer;
     private void Awake()
     {
         c = GetComponent<Container>();
@@ -22,7 +23,25 @@ public class Container : MonoBehaviour
 
     void Start()
     {
+        GLG = GetComponent<GridLayoutGroup>();
         gems();
+    }
+
+    private void Update()
+    {
+        //print(Screen.width + " " + Screen.height);
+        //GLG.cellSize = new Vector2(Screen.width / 1080 * 100, Screen.height / 1920 * 100);
+        int columns = 3; // Fixed column count
+        float padding = GLG.padding.left + GLG.padding.right;
+        float spacing = (columns - 1) * GLG.spacing.x;
+        float availableWidth = gridContainer.rect.width - padding - spacing;
+
+        // Calculate the cell size based on the available width and number of columns
+        float cellWidth = availableWidth / columns;
+
+        // Set the cell size (assuming square cells for simplicity)
+        Vector2 cellSize = new Vector2(cellWidth, cellWidth);
+        GLG.cellSize = cellSize;
     }
 
     public void gems()

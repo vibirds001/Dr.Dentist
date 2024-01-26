@@ -113,7 +113,7 @@ public class BuyingItem : MonoBehaviour
 
     public void UnrefinedLegendaryGemstone()
     {
-        gemNameText.text = "Legendary Gemstone";
+        gemNameText.text = "Legendary Tool";
         DescriptionText.text = "Grant 1 Legendary tool ";
         BuyWithAuraText.text = "Buy      " + ULGemPrice;
         BuyButton.onClick.RemoveAllListeners();

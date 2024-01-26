@@ -24,11 +24,7 @@ public class GemManager : MonoBehaviour
     private void Awake()
     {
         gm = this;
-        PlayerPrefs.SetString("Gem1", "1stTier/ToothBrush/1");
-        PlayerPrefs.SetString("Gem2", "1stTier/Toothpaste/2");
-        PlayerPrefs.SetString("Gem3", "1stTier/Floss/3");
-        PlayerPrefs.SetString("Gem4", "1stTier/MouthWash/4");
-        PlayerPrefs.SetString("Gem5", "1stTier/TongueScraper/5");
+
         if (!PlayerPrefs.HasKey("totalgems"))
         {
             PlayerPrefs.SetInt("totalgems", 5);
@@ -159,6 +155,7 @@ public class GemManager : MonoBehaviour
                 
                 break;
             }
+            mainMenuPanel.mmp.showStatPanel.SetActive(false);
         }
        // Main.instance.selectedGem = true;
     }
