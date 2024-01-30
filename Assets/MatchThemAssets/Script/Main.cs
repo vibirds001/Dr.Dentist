@@ -57,7 +57,7 @@ public class Main : MonoBehaviour
     public GameObject divider;
     public float timerCount;
     float timeRemaining;
-    public float goalCount;
+    private float goalCount;
     int levelCount = 1;
     public bool GameStart = true;
     public bool touchToStart = false;
@@ -87,6 +87,7 @@ public class Main : MonoBehaviour
     float combominutesForTenSecond;
     float combosecondsForTenSeconds;
 
+    public int personNumber;
 
     private MainMenu _mainMenu;
 
@@ -128,6 +129,7 @@ public class Main : MonoBehaviour
 
     public static Main instance;
 
+    
     // Use this for initialization
     private void Awake()
     {
@@ -148,6 +150,11 @@ public class Main : MonoBehaviour
             giveStats(n[0], n[1], int.Parse(n[2]));
         }
 
+
+        int randomPrice = Random.Range(Persons.instance.minPrice, Persons.instance.maxPrice);
+        goalCount = randomPrice;
+        
+
         comboGameObject.SetActive(false);
         ObtainedItems.SetActive(true);
         _mainMenu = GetComponent<MainMenu>();
@@ -163,7 +170,13 @@ public class Main : MonoBehaviour
         if (PlayerPrefs.GetInt("Level", 1) > 1)
         {
             levelCount = PlayerPrefs.GetInt("Level", 1);
-            goalCount = 5000 + levelCount * 5000;
+
+
+            //float randomPrice = Random.Range(Persons.instance.minPrice, Persons.instance.maxPrice);
+            //goalCount = randomPrice;
+            
+
+
 
             if (PlayerPrefs.GetString("Game") == "Load" && PlayerPrefs.GetInt("Save") > 0)
             {
@@ -481,7 +494,15 @@ public class Main : MonoBehaviour
             {
                 SoundManager.instance.Play_LEVEL_COMPLETE_Sound();
                 //_scoreTotal = 0;
-                goalCount += 5000;
+
+                int randomPrice = Random.Range(Persons.instance.minPrice, Persons.instance.maxPrice);
+                goalCount = randomPrice;
+                
+                
+                Persons.instance.person[personNumber-1].person.SetActive(false);
+                personNumber++;
+                Persons.instance.person[personNumber - 1].person.SetActive(true);
+
                 timeRemaining = timerCount;
                 levelCount++;
                 //PlayerPrefs.SetInt("Level", levelCount);

@@ -22,7 +22,7 @@ public class BuyingItem : MonoBehaviour
     private int LargeDepositGemPrice = 5000;
     private int ShinyRockGemPrice = 7000;
     private int ShinyDepositGemPrice = 14500;
-    private int ULGemPrice = 0;
+    private int ULGemPrice = 20000;
 
     private void Start()
     {
@@ -32,13 +32,14 @@ public class BuyingItem : MonoBehaviour
         mainMenuPanel.mmp.shinyRockGameObject.SetActive(false);
         mainMenuPanel.mmp.legandaryGemStoneGameObject.SetActive(false);
         gm = GetComponent<GemManager>();
+        ThePolished();
 
     }
     public void ThePolished()
     {
         gemNameText.text = "The Polished";
-        DescriptionText.text = "Give a 1.3 bonus score for ranked mode.";
-        BuyWithAuraText.text = "Buy       " + GemPrice;
+        DescriptionText.text = "1.3 bonus score for ranked mode.";
+        BuyWithAuraText.text = "Buy      " + GemPrice;
         BuyButton.onClick.RemoveAllListeners();
         //BuyButton.onClick.AddListener(() => buyButton(GemPrice, "polished"));
         BuyButton.onClick.AddListener(() => ObtainedPolished(GemPrice, "score increment"));
@@ -49,7 +50,7 @@ public class BuyingItem : MonoBehaviour
 
         gemNameText.text = "The Time Spirit";
         DescriptionText.text = "+ 30 seconds in time limit.";
-        BuyWithAuraText.text = "Buy       " + GemPrice;
+        BuyWithAuraText.text = "Buy      " + GemPrice;
         BuyButton.onClick.RemoveAllListeners();
         //  BuyButton.onClick.AddListener(() => buyButton(GemPrice, "The Time Spirit"));
         BuyButton.onClick.AddListener(() => ObtainedTimeSpirit(GemPrice, "Time Spirit"));
@@ -60,7 +61,7 @@ public class BuyingItem : MonoBehaviour
     {
         gemNameText.text = "The Clover";
         DescriptionText.text = "Lucky";
-        BuyWithAuraText.text = "Buy       " + GemPrice;
+        BuyWithAuraText.text = "Buy      " + GemPrice;
         BuyButton.onClick.RemoveAllListeners();
         //  BuyButton.onClick.AddListener(() => buyButton(GemPrice, "The Clover"));
         BuyButton.onClick.AddListener(() => ObtainedLucky(GemPrice, "Clover"));
@@ -69,7 +70,7 @@ public class BuyingItem : MonoBehaviour
 
     public void BagofDebris()
     {
-        gemNameText.text = "Bag of Debris";
+        gemNameText.text = "Bag of Tools";
         DescriptionText.text = "Grant 3 common tools";
         BuyWithAuraText.text = "Buy      " + BagOfDebris;
         BuyButton.onClick.RemoveAllListeners();
@@ -80,9 +81,9 @@ public class BuyingItem : MonoBehaviour
 
     public void LargeDeposit()
     {
-        gemNameText.text = "Large Deposit ";
-        DescriptionText.text = "Grant 5 tools";
-        BuyWithAuraText.text = "Buy     " + LargeDepositGemPrice;
+        gemNameText.text = "Large Tools ";
+        DescriptionText.text = "Grant 5 large tools";
+        BuyWithAuraText.text = "Buy      " + LargeDepositGemPrice;
         BuyButton.onClick.RemoveAllListeners();
         BuyButton.onClick.AddListener(() => buyButtonLargeDeposit(LargeDepositGemPrice, "Large Deposit"));
 
@@ -91,9 +92,9 @@ public class BuyingItem : MonoBehaviour
 
     public void ShinyRock()
     {
-        gemNameText.text = "Shiny Rock ";
-        DescriptionText.text = "Grant 1 Rare tools";
-        BuyWithAuraText.text = "Buy     " + ShinyRockGemPrice;
+        gemNameText.text = "Clean Tools ";
+        DescriptionText.text = "Grant 1 clean tools";
+        BuyWithAuraText.text = "Buy      " + ShinyRockGemPrice;
         BuyButton.onClick.RemoveAllListeners();
         BuyButton.onClick.AddListener(() => buyButtoShinyRock(ShinyRockGemPrice, "Shiny Rock "));
 
@@ -102,9 +103,9 @@ public class BuyingItem : MonoBehaviour
 
     public void ShinyDeposit()
     {
-        gemNameText.text = "Shiny Deposit";
-        DescriptionText.text = "Grant 3 tools.";
-        BuyWithAuraText.text = "Buy   " + ShinyDepositGemPrice;
+        gemNameText.text = "Shiny Tools";
+        DescriptionText.text = "Grant 3 shiny tools.";
+        BuyWithAuraText.text = "Buy      " + ShinyDepositGemPrice;
         BuyButton.onClick.RemoveAllListeners();
         BuyButton.onClick.AddListener(() => buyButtonShinyDeposit(ShinyDepositGemPrice, "Shiny Deposit"));
 
@@ -113,8 +114,8 @@ public class BuyingItem : MonoBehaviour
 
     public void UnrefinedLegendaryGemstone()
     {
-        gemNameText.text = "Legendary Tool";
-        DescriptionText.text = "Grant 1 Legendary tool ";
+        gemNameText.text = "Legendary Tools";
+        DescriptionText.text = "Grant 1 legendary tool ";
         BuyWithAuraText.text = "Buy      " + ULGemPrice;
         BuyButton.onClick.RemoveAllListeners();
         BuyButton.onClick.AddListener(() => buyButtonLegendaryGemStone(ULGemPrice, "Legendary Gemstone"));
@@ -169,7 +170,7 @@ public class BuyingItem : MonoBehaviour
         mainMenuPanel.mmp.shinyDepositGameObject.SetActive(false);
         mainMenuPanel.mmp.shinyRockGameObject.SetActive(false);
         mainMenuPanel.mmp.legandaryGemStoneGameObject.SetActive(false);
-        ObtainedItemText.text = "Bag Of Debris";
+        ObtainedItemText.text = "Bag Of Tools";
         int tg = PlayerPrefs.GetInt("totalgems");
         for (int i = 1; i <= 3; i++)
         {
@@ -283,7 +284,7 @@ public class BuyingItem : MonoBehaviour
         mainMenuPanel.mmp.shinyDepositGameObject.SetActive(false);
         mainMenuPanel.mmp.shinyRockGameObject.SetActive(false);
         mainMenuPanel.mmp.legandaryGemStoneGameObject.SetActive(false);
-        ObtainedItemText.text = "Large Deposit";
+        ObtainedItemText.text = "Large Tools";
         int tg = PlayerPrefs.GetInt("totalgems");
         for (int i = 1; i <= 5; i++)
         {
@@ -442,7 +443,7 @@ public class BuyingItem : MonoBehaviour
         mainMenuPanel.mmp.shinyDepositGameObject.SetActive(false);
         mainMenuPanel.mmp.shinyRockGameObject.SetActive(true);
         mainMenuPanel.mmp.legandaryGemStoneGameObject.SetActive(false);
-        ObtainedItemText.text = "Shiny Rock";
+        ObtainedItemText.text = "Clean Tools";
         int tg = PlayerPrefs.GetInt("totalgems");
         int R = Random.Range(1, 5);
         if (R == 1)
@@ -503,7 +504,7 @@ public class BuyingItem : MonoBehaviour
         mainMenuPanel.mmp.shinyDepositGameObject.SetActive(true);
         mainMenuPanel.mmp.shinyRockGameObject.SetActive(false);
         mainMenuPanel.mmp.legandaryGemStoneGameObject.SetActive(false);
-        ObtainedItemText.text = "Shiny Deposit";
+        ObtainedItemText.text = "Shiny Tools";
         int tg = PlayerPrefs.GetInt("totalgems");
         for (int i = 1; i <= 3; i++)
         {
@@ -658,7 +659,7 @@ public class BuyingItem : MonoBehaviour
         mainMenuPanel.mmp.shinyDepositGameObject.SetActive(false);
         mainMenuPanel.mmp.shinyRockGameObject.SetActive(false);
         mainMenuPanel.mmp.legandaryGemStoneGameObject.SetActive(true);
-        ObtainedItemText.text = "Legendary GemStone";
+        ObtainedItemText.text = "Legendary Tools";
         int tg = PlayerPrefs.GetInt("totalgems");
         int R = Random.Range(1, 6);
         if (R == 1)

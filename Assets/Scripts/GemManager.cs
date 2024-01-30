@@ -169,7 +169,16 @@ public class GemManager : MonoBehaviour
         mainMenuPanel.mmp.showStatPanel.GetComponent<selectedItemDetails>().Gname = gemName;
         mainMenuPanel.mmp.showStatPanel.GetComponent<selectedItemDetails>().Gtype = gemType;
         mainMenuPanel.mmp.showStatPanel.GetComponent<selectedItemDetails>().Gnumber = gemNumber;
-        mainMenuPanel.mmp.stats.text = PlayerPrefs.GetString(gemType + "/" + gemName + "/" + gemNumber, "");
+        string stat = PlayerPrefs.GetString(gemType + "/" + gemName + "/" + gemNumber, "");
+        if (stat.Contains("/"))
+        {
+            string[] stats = stat.Split('/');
+            mainMenuPanel.mmp.stats.text = stats[0] + "\n" + stats[1] + "\n" + stats[2];
+        }
+        else
+        {
+            mainMenuPanel.mmp.stats.text = stat;
+        }
         if (gemName == "ToothBrush")
         {
             mainMenuPanel.mmp.img.sprite = gemsImages[0];
@@ -250,9 +259,5 @@ public class GemManager : MonoBehaviour
         {
             mainMenuPanel.mmp.img.sprite = gemsImages[19];
         }
-
-
-
-
     }
 }

@@ -1245,7 +1245,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '$: 0'
+  m_Text: '$: 8888'
 --- !u!222 &79968348
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2325,6 +2325,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 609398965}
   - {fileID: 1936114939}
   - {fileID: 1627814089}
   - {fileID: 1388923826}
@@ -2332,7 +2333,6 @@ RectTransform:
   - {fileID: 1653036453}
   - {fileID: 371937492}
   - {fileID: 1630488778}
-  - {fileID: 609398965}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5244,6 +5244,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 609398965}
+  - component: {fileID: 609398966}
   m_Layer: 0
   m_Name: Person
   m_TagString: Untagged
@@ -5279,6 +5280,156 @@ RectTransform:
   m_AnchoredPosition: {x: -149, y: 505}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &609398966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 609398964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bebc4d6248acd0b42aaf63499d115445, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  person:
+  - person: {fileID: 225081786}
+    seconds: 60
+    teeth:
+    - {fileID: 1733167989}
+    - {fileID: 648270785}
+    - {fileID: 1898228474}
+    - {fileID: 536875443}
+    - {fileID: 581722112}
+    - {fileID: 409593656}
+    - {fileID: 1608635011}
+    - {fileID: 993473341}
+    - {fileID: 849419230}
+    - {fileID: 1900462390}
+    - {fileID: 1964123164}
+    - {fileID: 823595286}
+  - person: {fileID: 665569801}
+    seconds: 60
+    teeth:
+    - {fileID: 1161061739}
+    - {fileID: 145376938}
+    - {fileID: 1891972010}
+    - {fileID: 724122254}
+    - {fileID: 1067342245}
+    - {fileID: 1584712820}
+    - {fileID: 417885178}
+    - {fileID: 1297825567}
+    - {fileID: 1537693082}
+    - {fileID: 183080557}
+    - {fileID: 1031603045}
+    - {fileID: 414305130}
+  - person: {fileID: 1991570791}
+    seconds: 60
+    teeth:
+    - {fileID: 1865089302}
+    - {fileID: 1111288491}
+    - {fileID: 1345833872}
+    - {fileID: 1413068795}
+    - {fileID: 397885859}
+    - {fileID: 2018335391}
+    - {fileID: 2003725440}
+    - {fileID: 1799684375}
+    - {fileID: 245117220}
+    - {fileID: 1922016358}
+    - {fileID: 1821247288}
+    - {fileID: 2115200493}
+  - person: {fileID: 437050487}
+    seconds: 60
+    teeth:
+    - {fileID: 949277038}
+    - {fileID: 1952238197}
+    - {fileID: 1559691658}
+    - {fileID: 1568667819}
+    - {fileID: 214440321}
+    - {fileID: 2048545570}
+    - {fileID: 387105637}
+    - {fileID: 1209220773}
+    - {fileID: 359430417}
+    - {fileID: 853272530}
+    - {fileID: 269089528}
+    - {fileID: 891099134}
+  - person: {fileID: 64260240}
+    seconds: 60
+    teeth:
+    - {fileID: 1955258196}
+    - {fileID: 279356159}
+    - {fileID: 1895354596}
+    - {fileID: 828950581}
+    - {fileID: 1131734936}
+    - {fileID: 656995014}
+    - {fileID: 57169715}
+    - {fileID: 1118177562}
+    - {fileID: 1165240706}
+    - {fileID: 1890224601}
+    - {fileID: 1984358708}
+    - {fileID: 1585133019}
+  - person: {fileID: 696487195}
+    seconds: 60
+    teeth:
+    - {fileID: 2114919601}
+    - {fileID: 973226738}
+    - {fileID: 438149698}
+    - {fileID: 1181889838}
+    - {fileID: 134842387}
+    - {fileID: 1428071471}
+    - {fileID: 1658309790}
+    - {fileID: 733782325}
+    - {fileID: 317318243}
+    - {fileID: 2078905073}
+    - {fileID: 2130115222}
+    - {fileID: 808532912}
+  - person: {fileID: 447641839}
+    seconds: 60
+    teeth:
+    - {fileID: 594857428}
+    - {fileID: 1006550766}
+    - {fileID: 2061110783}
+    - {fileID: 45578903}
+    - {fileID: 65240611}
+    - {fileID: 728584451}
+    - {fileID: 1619198684}
+    - {fileID: 1839040777}
+    - {fileID: 671093969}
+    - {fileID: 1840562725}
+    - {fileID: 1241025907}
+    - {fileID: 568098968}
+  - person: {fileID: 1990621944}
+    seconds: 60
+    teeth:
+    - {fileID: 1348376263}
+    - {fileID: 1327824133}
+    - {fileID: 1713774973}
+    - {fileID: 1889196172}
+    - {fileID: 1595416497}
+    - {fileID: 62211015}
+    - {fileID: 730310079}
+    - {fileID: 727751103}
+    - {fileID: 987547053}
+    - {fileID: 60125681}
+    - {fileID: 311578290}
+    - {fileID: 1910251055}
+  - person: {fileID: 22480122}
+    seconds: 60
+    teeth:
+    - {fileID: 1783589674}
+    - {fileID: 1500994389}
+    - {fileID: 1215758734}
+    - {fileID: 897306888}
+    - {fileID: 1925724257}
+    - {fileID: 1053162135}
+    - {fileID: 332257166}
+    - {fileID: 799869731}
+    - {fileID: 1793381546}
+    - {fileID: 536238698}
+    - {fileID: 791834077}
+    - {fileID: 557614603}
+  minPrice: 1000
+  maxPrice: 2000
 --- !u!1 &612123795
 GameObject:
   m_ObjectHideFlags: 0
@@ -12374,6 +12525,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1744529985}
     - target: {fileID: 11400000, guid: 14910ea5b5a2fa64c9a1d4a3215fbdd0, type: 3}
+      propertyPath: personNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 14910ea5b5a2fa64c9a1d4a3215fbdd0, type: 3}
       propertyPath: ObtainedItems
       value: 
       objectReference: {fileID: 1630488777}
@@ -12399,7 +12554,7 @@ PrefabInstance:
       objectReference: {fileID: 100000, guid: f098e01493dd73746819531811e99d1b, type: 3}
     - target: {fileID: 11400000, guid: 14910ea5b5a2fa64c9a1d4a3215fbdd0, type: 3}
       propertyPath: _scoreIncrement
-      value: 50
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 14910ea5b5a2fa64c9a1d4a3215fbdd0, type: 3}
       propertyPath: comboGameObject
@@ -12990,7 +13145,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Coins :  0'
+  m_Text: 'Coins :  8888'
 --- !u!222 &1513750959
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14143,7 +14298,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Time  00:00
+  m_Text: Time  88:88
 --- !u!222 &1607218318
 CanvasRenderer:
   m_ObjectHideFlags: 0

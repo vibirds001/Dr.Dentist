@@ -15,7 +15,6 @@ public class teeth : MonoBehaviour
 
     public void CleanTeeth()
     {
-        
         if(Main.instance._scoreTotal >= 1000)
         {
             tooth[0].SetActive(false);
@@ -23,7 +22,6 @@ public class teeth : MonoBehaviour
         if (Main.instance._scoreTotal >= 2000)
         {
             tooth[1].SetActive(false);
-            
         }
         if (Main.instance._scoreTotal >= 3000)
         {
