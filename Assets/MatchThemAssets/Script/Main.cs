@@ -88,6 +88,7 @@ public class Main : MonoBehaviour
     float combosecondsForTenSeconds;
 
     public int personNumber;
+    public int teethNumber;
 
     private MainMenu _mainMenu;
 
@@ -129,6 +130,7 @@ public class Main : MonoBehaviour
 
     public static Main instance;
 
+    private float goalPrice;
     
     // Use this for initialization
     private void Awake()
@@ -149,7 +151,8 @@ public class Main : MonoBehaviour
             string[] n = name.Split("/");
             giveStats(n[0], n[1], int.Parse(n[2]));
         }
-
+        
+        ScoreText.GetComponent<Text>().text = "Coins : " + goalCount.ToString();
 
         int randomPrice = Random.Range(Persons.instance.minPrice, Persons.instance.maxPrice);
         goalCount = randomPrice;
@@ -334,7 +337,8 @@ public class Main : MonoBehaviour
     void Update()
     {
 
-
+        timerCount = Persons.instance.person[0].seconds;
+        Debug.Log(personNumber + "timer depends");
         if (iSMakeComboTutorial == true && PlayerPrefs.GetString("GameMode") == "Tutorial")
         {
 
@@ -488,21 +492,96 @@ public class Main : MonoBehaviour
                 SoundManager.instance.Play_LEVEL_FAILED_Sound();
                 UpdateColliederAllTiles(false, 80);
             }
+          
+            if(_scoreTotal > 100)
+            {
+                Persons.instance.person[personNumber - 1].teeth[0].SetActive(false);
+      
+            }
+            if (_scoreTotal > 200)
+            {
+                Persons.instance.person[personNumber - 1].teeth[1].SetActive(false);
+             
+            }
+            if (_scoreTotal > 300)
+            {
+                Persons.instance.person[personNumber - 1].teeth[2].SetActive(false);
+             
+            }
+            if (_scoreTotal > 400)
+            {
+                Persons.instance.person[personNumber - 1].teeth[3].SetActive(false);
+              
+            }
+            if (_scoreTotal > 500)
+            {
+                Persons.instance.person[personNumber - 1].teeth[4].SetActive(false);
+             
+            }
+            if (_scoreTotal > 600)
+            {
+                Persons.instance.person[personNumber - 1].teeth[5].SetActive(false);
+           
+            }
+            if (_scoreTotal > 700)
+            {
+                Persons.instance.person[personNumber - 1].teeth[6].SetActive(false);
+           
+            }
+            if (_scoreTotal > 800)
+            {
+                Persons.instance.person[personNumber - 1].teeth[7].SetActive(false);
+              
+            }
+            if (_scoreTotal > 900)
+            {
+                Persons.instance.person[personNumber - 1].teeth[8].SetActive(false);
+             
+            }
+            if (_scoreTotal > 1000)
+            {
+                Persons.instance.person[personNumber - 1].teeth[9].SetActive(false);
+               
+            }
+            if (_scoreTotal > 1100)
+            {
+                Persons.instance.person[personNumber - 1].teeth[10].SetActive(false);
+                
+            }
+            if (_scoreTotal > 1200)
+            {
+                Persons.instance.person[personNumber - 1].teeth[11].SetActive(false);
 
+                teethNumber = 12;
+                //for(int i = 0; i < teethNumber; i++)
+                //{
+                //    Persons.instance.person[personNumber - 1].teeth[i].SetActive(true);
+                //}
+            }
             goalText.text = "$: " + goalCount.ToString();
-            if (_scoreTotal >= goalCount)
+            if (teethNumber > 11)
             {
                 SoundManager.instance.Play_LEVEL_COMPLETE_Sound();
-                //_scoreTotal = 0;
+                _scoreTotal = 0;
+                teethNumber = 1;
+                ScoreText.GetComponent<Text>().text = "Coins : " + goalCount.ToString();
 
                 int randomPrice = Random.Range(Persons.instance.minPrice, Persons.instance.maxPrice);
                 goalCount = randomPrice;
-                
-                
-                Persons.instance.person[personNumber-1].person.SetActive(false);
-                personNumber++;
-                Persons.instance.person[personNumber - 1].person.SetActive(true);
 
+                if (personNumber < 9)
+                {
+                    Persons.instance.person[personNumber - 1].person.SetActive(false);
+                    personNumber++;
+                    Persons.instance.person[personNumber - 1].person.SetActive(true);
+                    timerCount = Persons.instance.person[personNumber - 1].seconds;
+                }
+                else
+                {
+                    Persons.instance.person[8].person.SetActive(false);
+                    Persons.instance.person[0].person.SetActive(true);
+                    personNumber = 1;
+                }
                 timeRemaining = timerCount;
                 levelCount++;
                 //PlayerPrefs.SetInt("Level", levelCount);
@@ -907,7 +986,7 @@ public class Main : MonoBehaviour
         }
         //Update the score
         //LevelText.GetComponent<Text>().text = "Level : " + levelCount.ToString();
-        ScoreText.GetComponent<Text>().text = "Coins : " + _scoreTotal.ToString();
+        //ScoreText.GetComponent<Text>().text = "Coins : " + _scoreTotal.ToString();
 
         //  (GetComponent(typeof(TextMesh)) as TextMesh).text = "     LEVEL: " + levelCount + "   SCORE: " + _scoreTotal.ToString();
     }
@@ -975,7 +1054,7 @@ public class Main : MonoBehaviour
         {
 
         }
-        teeth.t.CleanTeeth();
+        //teeth.t.CleanTeeth();
         //else
         //{
         //    _scoreTotal = _scoreTotal - modOfScore + 5;
@@ -988,7 +1067,7 @@ public class Main : MonoBehaviour
         {
             timeAddition = 1;
         }
-        timeRemaining = timeRemaining + timeAddition;
+        //timeRemaining = timeRemaining + timeAddition;
         timeBase++;
 
 
@@ -1829,7 +1908,7 @@ public class Main : MonoBehaviour
             for (int j = 0; j < _gridHeight; j++)
             {
 
-                timeRemaining = timeRemaining + 0.04f;
+                //timeRemaining = timeRemaining + 0.04f;
 
 
             }
@@ -1847,7 +1926,7 @@ public class Main : MonoBehaviour
             for (int j = 0; j < _gridHeight; j++)
             {
 
-                timeRemaining = timeRemaining + 0.09f;
+                //timeRemaining = timeRemaining + 0.09f;
 
 
             }
@@ -1865,7 +1944,7 @@ public class Main : MonoBehaviour
             for (int j = 0; j < _gridHeight; j++)
             {
 
-                timeRemaining = timeRemaining + 0.06f;
+                //timeRemaining = timeRemaining + 0.06f;
 
 
             }

@@ -2054,7 +2054,6 @@ GameObject:
   - component: {fileID: 225081787}
   - component: {fileID: 225081789}
   - component: {fileID: 225081788}
-  - component: {fileID: 225081790}
   m_Layer: 0
   m_Name: Person1
   m_TagString: Untagged
@@ -2131,31 +2130,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 225081786}
   m_CullTransparentMesh: 1
---- !u!114 &225081790
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 225081786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1601fdfa59916343b2191947c27151e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tooth:
-  - {fileID: 1733167989}
-  - {fileID: 648270785}
-  - {fileID: 1898228474}
-  - {fileID: 536875443}
-  - {fileID: 581722112}
-  - {fileID: 409593656}
-  - {fileID: 1608635011}
-  - {fileID: 993473341}
-  - {fileID: 849419230}
-  - {fileID: 1900462390}
-  - {fileID: 1964123164}
-  - {fileID: 823595286}
 --- !u!1 &245117220
 GameObject:
   m_ObjectHideFlags: 0
@@ -5294,7 +5268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   person:
   - person: {fileID: 225081786}
-    seconds: 60
+    seconds: 110
     teeth:
     - {fileID: 1733167989}
     - {fileID: 648270785}
@@ -5309,7 +5283,7 @@ MonoBehaviour:
     - {fileID: 1964123164}
     - {fileID: 823595286}
   - person: {fileID: 665569801}
-    seconds: 60
+    seconds: 100
     teeth:
     - {fileID: 1161061739}
     - {fileID: 145376938}
@@ -5324,7 +5298,7 @@ MonoBehaviour:
     - {fileID: 1031603045}
     - {fileID: 414305130}
   - person: {fileID: 1991570791}
-    seconds: 60
+    seconds: 90
     teeth:
     - {fileID: 1865089302}
     - {fileID: 1111288491}
@@ -5339,7 +5313,7 @@ MonoBehaviour:
     - {fileID: 1821247288}
     - {fileID: 2115200493}
   - person: {fileID: 437050487}
-    seconds: 60
+    seconds: 80
     teeth:
     - {fileID: 949277038}
     - {fileID: 1952238197}
@@ -5354,7 +5328,7 @@ MonoBehaviour:
     - {fileID: 269089528}
     - {fileID: 891099134}
   - person: {fileID: 64260240}
-    seconds: 60
+    seconds: 70
     teeth:
     - {fileID: 1955258196}
     - {fileID: 279356159}
@@ -5384,7 +5358,7 @@ MonoBehaviour:
     - {fileID: 2130115222}
     - {fileID: 808532912}
   - person: {fileID: 447641839}
-    seconds: 60
+    seconds: 50
     teeth:
     - {fileID: 594857428}
     - {fileID: 1006550766}
@@ -5399,7 +5373,7 @@ MonoBehaviour:
     - {fileID: 1241025907}
     - {fileID: 568098968}
   - person: {fileID: 1990621944}
-    seconds: 60
+    seconds: 50
     teeth:
     - {fileID: 1348376263}
     - {fileID: 1327824133}
@@ -5414,7 +5388,7 @@ MonoBehaviour:
     - {fileID: 311578290}
     - {fileID: 1910251055}
   - person: {fileID: 22480122}
-    seconds: 60
+    seconds: 50
     teeth:
     - {fileID: 1783589674}
     - {fileID: 1500994389}
@@ -12512,6 +12486,10 @@ PrefabInstance:
       propertyPath: countdownGO
       value: 
       objectReference: {fileID: 1653036452}
+    - target: {fileID: 11400000, guid: 14910ea5b5a2fa64c9a1d4a3215fbdd0, type: 3}
+      propertyPath: teethNumber
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 14910ea5b5a2fa64c9a1d4a3215fbdd0, type: 3}
       propertyPath: Polishedtext
       value: 
