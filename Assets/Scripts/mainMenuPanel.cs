@@ -31,15 +31,16 @@ public class mainMenuPanel : MonoBehaviour
     public TextMeshProUGUI stats;
     public Image img;
 
-
+    public int totalCoins;
     private void Awake()
     {
+        if (mmp == null)
         mmp = this;
     }
 
     void Start()
     {
-        
+        AuraText.text = totalCoins.ToString();
         obtainedItemPanel.SetActive(false);
     }
 
@@ -53,10 +54,10 @@ public class mainMenuPanel : MonoBehaviour
     {
         if (AuraText != null)
         {
-            int totalAura = PlayerPrefs.GetInt("totalaura", 0);
-
+            totalCoins = PlayerPrefs.GetInt("totalaura");
+            
             // Update the UI text to display the current total aura count
-            AuraText.text = totalAura.ToString();
+            AuraText.text = totalCoins.ToString();
         }
         else
         {

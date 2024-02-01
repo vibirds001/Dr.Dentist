@@ -130,8 +130,9 @@ public class Main : MonoBehaviour
 
     public static Main instance;
 
-    private float goalPrice;
-    
+    private int goalPrice;
+
+    public int totalCoins;
     // Use this for initialization
     private void Awake()
     {
@@ -157,7 +158,7 @@ public class Main : MonoBehaviour
         int randomPrice = Random.Range(Persons.instance.minPrice, Persons.instance.maxPrice);
         goalCount = randomPrice;
         
-
+        goalPrice = randomPrice;
         comboGameObject.SetActive(false);
         ObtainedItems.SetActive(true);
         _mainMenu = GetComponent<MainMenu>();
@@ -419,7 +420,7 @@ public class Main : MonoBehaviour
                 int additionalAura = crystallizationCount * 1000;
                 updatedTotalAura += additionalAura;
 
-                PlayerPrefs.SetInt("totalaura", updatedTotalAura);
+                //PlayerPrefs.SetInt("totalaura", updatedTotalAura);
 
 
                 //GetComponent<MainMenu>().aura();
@@ -483,7 +484,7 @@ public class Main : MonoBehaviour
                 int additionalAura = crystallizationCount * 1000;
                 updatedTotalAura += additionalAura;
 
-                PlayerPrefs.SetInt("totalaura", updatedTotalAura);
+                //PlayerPrefs.SetInt("totalaura", updatedTotalAura);
 
                 //GetComponent<MainMenu>().aura();
 
@@ -564,11 +565,18 @@ public class Main : MonoBehaviour
                 SoundManager.instance.Play_LEVEL_COMPLETE_Sound();
                 _scoreTotal = 0;
                 teethNumber = 1;
-                ScoreText.GetComponent<Text>().text = "Coins : " + goalCount.ToString();
+                
+                Debug.Log(goalPrice + "previous price");
+                ScoreText.GetComponent<Text>().text = "Coins : " + goalPrice.ToString();
+
+                mainMenuPanel.mmp.totalCoins += goalPrice;
+                PlayerPrefs.SetInt("totalaura",mainMenuPanel.mmp.totalCoins);
 
                 int randomPrice = Random.Range(Persons.instance.minPrice, Persons.instance.maxPrice);
                 goalCount = randomPrice;
 
+                goalPrice += randomPrice;
+                Debug.Log(goalPrice + "next Price");
                 if (personNumber < 9)
                 {
                     Persons.instance.person[personNumber - 1].person.SetActive(false);
