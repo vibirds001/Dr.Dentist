@@ -12532,7 +12532,7 @@ PrefabInstance:
       objectReference: {fileID: 100000, guid: f098e01493dd73746819531811e99d1b, type: 3}
     - target: {fileID: 11400000, guid: 14910ea5b5a2fa64c9a1d4a3215fbdd0, type: 3}
       propertyPath: _scoreIncrement
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 14910ea5b5a2fa64c9a1d4a3215fbdd0, type: 3}
       propertyPath: comboGameObject

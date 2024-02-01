@@ -553,10 +553,10 @@ public class Main : MonoBehaviour
                 Persons.instance.person[personNumber - 1].teeth[11].SetActive(false);
 
                 teethNumber = 12;
-                //for(int i = 0; i < teethNumber; i++)
-                //{
-                //    Persons.instance.person[personNumber - 1].teeth[i].SetActive(true);
-                //}
+                for (int i = 0; i < teethNumber; i++)
+                {
+                    Persons.instance.person[personNumber - 1].teeth[i].SetActive(true);
+                }
             }
             goalText.text = "$: " + goalCount.ToString();
             if (teethNumber > 11)
