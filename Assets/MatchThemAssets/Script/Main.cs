@@ -152,7 +152,8 @@ public class Main : MonoBehaviour
             string[] n = name.Split("/");
             giveStats(n[0], n[1], int.Parse(n[2]));
         }
-        
+
+       
         ScoreText.GetComponent<Text>().text = "Coins : " + goalCount.ToString();
 
         int randomPrice = Random.Range(Persons.instance.minPrice, Persons.instance.maxPrice);
@@ -1881,12 +1882,21 @@ public class Main : MonoBehaviour
     }
     private bool isPaused = true;
 
+    
     public void Polished()
     {
         if (PlayerPrefs.GetInt("ThePolished") > 0)
         {
             PlayerPrefs.SetInt("ThePolished", PlayerPrefs.GetInt("ThePolished", 0) - 1);
-            Main.instance._scoreIncrement += 1;
+
+            
+
+            float roundValue = Main.instance._scoreIncrement * 1.3f;
+
+            Debug.Log(roundValue + "round value");
+            Main.instance._scoreIncrement = Mathf.RoundToInt(roundValue);
+
+
             Polishedtext.text = PlayerPrefs.GetInt("ThePolished").ToString();
         }
     }
@@ -1895,7 +1905,7 @@ public class Main : MonoBehaviour
         if (PlayerPrefs.GetInt("TimeSpirit") > 0)
         {
             PlayerPrefs.SetInt("TimeSpirit", PlayerPrefs.GetInt("TimeSpirit", 0) - 1);
-            timeRemaining += 30;
+            timeRemaining += 10;
             TimeSpirittext.text =PlayerPrefs.GetInt("TimeSpirit").ToString();
         }
     }

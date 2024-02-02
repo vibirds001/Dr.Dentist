@@ -49,7 +49,7 @@ public class BuyingItem : MonoBehaviour
     {
 
         gemNameText.text = "The Time Spirit";
-        DescriptionText.text = "+ 30 seconds in time limit.";
+        DescriptionText.text = "+ 10 seconds in time limit.";
         BuyWithAuraText.text = "Buy      " + GemPrice;
         BuyButton.onClick.RemoveAllListeners();
         //  BuyButton.onClick.AddListener(() => buyButton(GemPrice, "The Time Spirit"));
