@@ -132,7 +132,7 @@ public class Main : MonoBehaviour
 
     private int goalPrice;
 
-    public int totalCoins;
+    
     // Use this for initialization
     private void Awake()
     {
@@ -159,6 +159,8 @@ public class Main : MonoBehaviour
         goalCount = randomPrice;
         
         goalPrice = randomPrice;
+        
+
         comboGameObject.SetActive(false);
         ObtainedItems.SetActive(true);
         _mainMenu = GetComponent<MainMenu>();
@@ -339,7 +341,7 @@ public class Main : MonoBehaviour
     {
 
         timerCount = Persons.instance.person[0].seconds;
-        Debug.Log(personNumber + "timer depends");
+     
         if (iSMakeComboTutorial == true && PlayerPrefs.GetString("GameMode") == "Tutorial")
         {
 
@@ -569,13 +571,14 @@ public class Main : MonoBehaviour
                 Debug.Log(goalPrice + "previous price");
                 ScoreText.GetComponent<Text>().text = "Coins : " + goalPrice.ToString();
 
-                mainMenuPanel.mmp.totalCoins += goalPrice;
-                PlayerPrefs.SetInt("totalaura",mainMenuPanel.mmp.totalCoins);
+               
+                mainMenuPanel.mmp.totalCoins += (int)goalCount;
 
                 int randomPrice = Random.Range(Persons.instance.minPrice, Persons.instance.maxPrice);
                 goalCount = randomPrice;
 
                 goalPrice += randomPrice;
+                PlayerPrefs.SetInt("totalaura",mainMenuPanel.mmp.totalCoins);
                 Debug.Log(goalPrice + "next Price");
                 if (personNumber < 9)
                 {
@@ -1877,6 +1880,49 @@ public class Main : MonoBehaviour
         }
     }
     private bool isPaused = true;
+
+    public void Polished()
+    {
+        if (PlayerPrefs.GetInt("ThePolished") > 0)
+        {
+            PlayerPrefs.SetInt("ThePolished", PlayerPrefs.GetInt("ThePolished", 0) - 1);
+            Main.instance._scoreIncrement += 1;
+            Polishedtext.text = PlayerPrefs.GetInt("ThePolished").ToString();
+        }
+    }
+    public void TimeSpirit()
+    {
+        if (PlayerPrefs.GetInt("TimeSpirit") > 0)
+        {
+            PlayerPrefs.SetInt("TimeSpirit", PlayerPrefs.GetInt("TimeSpirit", 0) - 1);
+            timeRemaining += 30;
+            TimeSpirittext.text =PlayerPrefs.GetInt("TimeSpirit").ToString();
+        }
+    }
+
+    public void Lucky()
+    {
+        if (PlayerPrefs.GetInt("Lucky") > 0)
+        {
+            PlayerPrefs.SetInt("Lucky", PlayerPrefs.GetInt("Lucky", 0) - 1);
+            for (int i = 0; i < _gridWidth; i++)
+            {
+                for (int j = 3; j < 5; j++)
+                {
+
+                    GameObject go = _arrayOfShapes[i, j].gameObject;
+                    var destroyingParticle = GameObject.Instantiate(_particleEffectWhenMatch as GameObject, new Vector3(go.transform.position.x, go.transform.position.y, -2), transform.rotation) as GameObject;
+                    Destroy(destroyingParticle, 1f);
+                    _arrayOfShapes[i, j] = GameObject.Instantiate(_emptyGameobject, new Vector3((int)go.transform.position.x, (int)go.transform.position.y, -1), transform.rotation) as GameObject;
+                    // Destroy the object at (x, y)
+
+                    Destroy(go);
+                }
+            }
+            DoEmptyDown(ref _arrayOfShapes);
+            Luckytext.text = PlayerPrefs.GetInt("Lucky").ToString();
+        }
+    }
 
     private void ChoronusGemEffectForLShape()
     {

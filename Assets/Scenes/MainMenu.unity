@@ -1002,7 +1002,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0bef11c0b191bb34fb4e70f78ae817b0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 610e84ea14d2b30418855c79fa6c9ef6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9659,6 +9659,7 @@ MonoBehaviour:
   itemName: {fileID: 362279094}
   stats: {fileID: 942396612}
   img: {fileID: 1492573599}
+  totalCoins: 0
 --- !u!1 &1334967654
 GameObject:
   m_ObjectHideFlags: 0
@@ -12547,7 +12548,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 610e84ea14d2b30418855c79fa6c9ef6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0bef11c0b191bb34fb4e70f78ae817b0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
